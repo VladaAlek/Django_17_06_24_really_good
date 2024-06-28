@@ -1,3 +1,8 @@
+
+
+![ERD Book](./static/images/ERD%20Book.png)
+
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome Vladimir Aleksic,
