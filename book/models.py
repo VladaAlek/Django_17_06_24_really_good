@@ -6,7 +6,7 @@ class Review(models.Model):
     content = models.TextField()
     
     
-class Book(models.Model):
+class Bibliography(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=150)
     publisher = models.CharField(max_length=100)
