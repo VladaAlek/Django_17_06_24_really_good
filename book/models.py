@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Review(models.Model):
     content = models.TextField()
-    
+
     
 class Bibliography(models.Model):
     title = models.CharField(max_length=100)
