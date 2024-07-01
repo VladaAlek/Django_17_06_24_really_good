@@ -29,9 +29,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['https://vladaalek-django170624r-v5jh3fd2oy3.ws.codeinstitute-ide.net',
+ALLOWED_HOSTS = ['8000-vladaalek-django170624r-v5jh3fd2oy3.ws.codeinstitute-ide.net',
 '.herokuapp.com']
 
 
@@ -94,8 +94,8 @@ DATABASES = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://vladaalek-django170624r-v5jh3fd2oy3.ws.codeinstitute-ide.net",
-    "https://vladimir-django-pp4-909a898b5b2a.herokuapp.com/book/"
+    "https://8000-vladaalek-django170624r-v5jh3fd2oy3.ws.codeinstitute-ide.net",
+    "https://vladimir-django-pp4-909a898b5b2a.herokuapp.com"
 ]
 
 
