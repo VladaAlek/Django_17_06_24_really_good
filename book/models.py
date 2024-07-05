@@ -22,7 +22,7 @@ class Review(models.Model):
         ordering = ["created_on"]
 
     def __str__(self):
-        return f"Review for {self.bibliography.title} created on {self.created_on}"
+        return f"Review for {self.bibliography.title} written by {self.bibliography.author} created on {self.created_on}"
 
 
     
