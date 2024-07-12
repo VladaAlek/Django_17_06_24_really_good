@@ -1,3 +1,7 @@
 *{
     box-sizing: border-box;
 }
+
+.logo-margin {
+    margin-left: 100px;
+}
