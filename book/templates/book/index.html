@@ -1,13 +1,18 @@
 {% extends "base.html" %}
 
+
 {% block content %}
-<h2>content of the reviews</h2>
+<h2 class="review-overlook-title bg-black text-center text-secondary">reviews overlook</h2>
 <div class="container-lg my-3">
     <div class="row">
         {% for review in review_list %}
-        <div class="col-sm-12 col-md-6 col-xxl-4 bg-primary">
-            <h2 class="book-title">{{ review.bibliography.title }}</h2>
-            <p class="review_content">{{review.content}}</p>
+        <div class="col-sm-12 col-md-6 col-xxl-4 bg-success">
+            <div class="bg-danger">
+                <h2 class="book-title text-white text-center">{{ review.bibliography.title }}</h2>
+            </div>
+            <p class="review-author">{{ review.bibliography.author }}</p>
+            <p>created on: {{  review.created_on }} by: {{ review.bibliography.reader  }}</p>
+            <p class="review-content">{{ review.content }}</p>
         </div>
         {% endfor %}
         <!--<div class="col-sm-12 col-md-6 col-xxl-3 bg-danger">
