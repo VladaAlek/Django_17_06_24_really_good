@@ -4,20 +4,24 @@
 <h2>content of the reviews</h2>
 <div class="container-lg my-3">
     <div class="row">
-      <div class="col-sm-12 col-md-6 col-xl-4 col-xxl-3 bg-primary">
-        Column
-      </div>
-      <div class="col-sm-12 col-md-6 col-xl-4 col-xxl-3 bg-danger">
-        Column
-      </div>
-      <div class="col-sm-12 col-md-6 col-xl-4 col-xxl-3 bg-black">
-        Column
-      </div>
-      <div class="col-sm-12 col-md-6 col-xl-4 col-xxl-3 bg-success">
-        Column
-      </div>
+        {% for review in review_list %}
+        <div class="col-sm-12 col-md-6 col-xxl-4 bg-primary">
+            <h2 class="book-title">{{ review.bibliography.title }}</h2>
+            <p class="review_content">{{review.content}}</p>
+        </div>
+        {% endfor %}
+        <!--<div class="col-sm-12 col-md-6 col-xxl-3 bg-danger">
+            Column
+        </div>
+        <div class="col-sm-12 col-md-6 col-xxl-3 bg-black">
+            Column
+        </div>
+        <div class="col-sm-12 col-md-6 col-xxl-3 bg-success">
+            Column
+        </div> -->
     </div>
-  </div>
+</div>
+{% endblock %}
 <!-- index.html content starts here -->
 <div class="container-fluid">
     <div class="row">
@@ -65,8 +69,8 @@
 </div>
 
 <!-- index.html content ends here -->
-{% endblock %}
+
 
 {% block copyright %}
-    Copyright 2023 Vladimir Aleksic
+Copyright 2023 Vladimir Aleksic
 {% endblock copyright %}
