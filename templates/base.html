@@ -36,7 +36,7 @@
   <nav class="navbar navbar-expand-md navbar-light pt-5 pb-4">
     <div class="container-xxl">
       <!-- navbar brand / title -->
-      <a class="navbar-brand" href="#intro">
+      <a class="navbar-brand" href="#home">
         <span class="text-secondary fw-bold">
             DRU Bibliography
         </span>
@@ -71,7 +71,11 @@
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-dark">Made by Vladimir Aleksic</p>
+        <p class="m-0 text-center text-dark">
+          {% block copyright %}
+            Made by Vladimir Aleksic
+          {% endblock copyright %}
+        </p>
         <p class="m-0 text-center text-dark">Follow us: <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>
             <i class="fab fa-instagram-square ms-3"></i>
