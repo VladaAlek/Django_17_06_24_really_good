@@ -5,7 +5,15 @@
 
 
 
+## Technologies and Software Used
+
+- navbar in base.html, inspiration from: [Shaun (Net Ninja)](https://github.com/iamshaunjp/bootstrap-5-tutorial/blob/lesson-9/index.html "Shaun (Net Ninja)")
+
+## Learning Resources Used
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+
+
 
 Welcome Vladimir Aleksic,
 
