@@ -2,11 +2,21 @@
     box-sizing: border-box;
 }
 
-#logo-margin {
-    margin-left: 50px;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 .navbar-nav {
     margin-left: 500px;
+}
+
+nav, main, footer {
+    border: 2px solid red; /* Temporary border to visualize the layout */
 }
 
