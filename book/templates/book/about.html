@@ -1,7 +1,55 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p>content comes here</p>
+<div class="container-lg my-5">
+    <h2>responsive column widths</h2>
+    <div class="row gy-3"> <!-- manually change gutter using g{d}-{n} -->
+      <div class="col-sm-4 col-lg-6">
+        <p class="p-5 bg-primary text-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took 
+             a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
+             but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release 
+            of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+            like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+      <div class="col-sm-4 col-lg-3">
+        <div class="p-5 bg-primary text-light">
+            <form method="post" action="">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" required>
+                </div>
+                <div class="mb-3">
+                    <label for="authors" class="form-label">Author(s)</label>
+                    <input type="text" class="form-control" id="authors" name="authors" required>
+                </div>
+                <div class="mb-3">
+                    <label for="publisher" class="form-label">Publisher</label>
+                    <input type="text" class="form-control" id="publisher" name="publisher" required>
+                </div>
+                <div class="mb-3">
+                    <label for="year" class="form-label">Year</label>
+                    <input type="number" class="form-control" id="year" name="year" required>
+                </div>
+                <div class="mb-3">
+                    <label for="edition" class="form-label">Edition (Optional)</label>
+                    <input type="text" class="form-control" id="edition" name="edition">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <a href="" class="btn btn-info">Read</a>
+                    <a href="" class="btn btn-warning">Update</a>
+                    <a href="" class="btn btn-danger">Delete</a>
+                    <a href="" class="btn btn-primary">Comment</a>
+                </div>
+            </form>
+        </div>
+    </div>
+      <div class="col-sm-4 col-lg-3">
+        <div class="p-5 bg-primary text-light"><img src="#" alt="image of the fire desaster"></div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
 
 {% block copyright %}
