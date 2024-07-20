@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
 <div class="container-lg my-5">
-  <h2 class="text-center">Contribute to Our Project!</h2>
+  <h2 class="text-center about-title">Contribute to Our Project!</h2>
   <div class="row gy-3">
     <!-- manually change gutter using g{d}-{n} -->
     <div class="col-sm-12 col-md-6 col-lg-4">
@@ -53,8 +55,8 @@
         </form>
       </div>
     </div>
-    <div class="col-sm-4 col-lg-4 d-none d-lg-block">
-      <div class="p-5 bg-primary text-light "><img src="#" alt="image of the fire desaster"></div>
+    <div class="col-lg-4 p-0 bg-white d-none d-lg-block">
+      <img src="{% static 'images/forest_fire.jpg' %}" alt="image of the forest fire desaster" class="img-fluid">
     </div>
   </div>
 </div>
