@@ -32,7 +32,7 @@ def review_detail(request, slug):
     :template:`book/review_detail.html`
     """
 
-    queryset = Review.objects.filter(status=1)
+    queryset = Review.objects.filter()
     review = get_object_or_404(queryset, slug=slug)
 
     return render(

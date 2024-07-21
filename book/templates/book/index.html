@@ -11,7 +11,11 @@
         {% for review in review_list %}
         <div class="col-sm-12 col-md-6 col-xxl-4 bg-success">
             <div class="bg-danger">
-                <h2 class="book-title text-white text-center">{{ review.bibliography.title }}</h2>
+                <h2 class="book-title text-white text-center">
+                    {{ review.bibliography.title }}
+                    <a href="{% url 'review_detail' review.slug %}" class="review-link text-muted"><br>Click Here</a>
+                    <!--<i class="bi bi-arrows-angle-expand"></i>-->
+                </h2>
             </div>
             <p class="review-author">{{ review.bibliography.author }}</p>
             <p>created on: {{  review.created_on }} by: {{ review.bibliography.reader }}</p>
@@ -27,4 +31,3 @@
 Copyright 2023 Vladimir Aleksic
 {% endblock copyright %}
 
-<a href="{% url 'review_detail' review.slug %}" class="review-link">klick here</a>
