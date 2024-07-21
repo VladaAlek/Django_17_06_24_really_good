@@ -16,6 +16,7 @@ class Review(models.Model):
     created_on = models.DateTimeField(auto_now_add=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="reviews", null=True)
     bibliography = models.ForeignKey(Bibliography, on_delete=models.CASCADE, related_name="reviews", blank=True, null=True)
+    slug = models.SlugField(unique=True, blank=True, null=True)
 
 
     class Meta:
