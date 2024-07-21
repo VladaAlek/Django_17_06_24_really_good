@@ -21,6 +21,16 @@
 
  - Capture origin [Flickr Account of Christine Warner-Morin](https://www.flickr.com/photos/christinehawks/50353850332/in/photolist-2jHADpj-7kmiGy-2jHEru9-2jFJ9Y7-22P5zJg-of6wu8-NaF2Rd-ojVc2X-2hy4jKb-ayQ9Zd-2a3Fsxe-oY5g6v-4Qan5V-9E5p81-2jeowAb-8cnfe4-8cqAej-4wfLyv-8Y56Fj-2jFBPqN-cWFQTo-pNWvyC-9EkDQJ-vRtXnm-2k5qz8h-2mg9aBL-24PzNWS-jLRWD-7Deny4-8s5SFR-6KqwLt-2mtZSi1-DaQDT9-2kbz98Q-2iF8i2J-2jEWWFC-83hwXC-2nx2aAF-EZDYqS-6KuEas-2np5gAz-28Q8YfN-27aL8kh-cpQk6E-oR5RdZ-xxdRFb-6RTSvw-2jwwdXD-8kCBE2-wPXpbo "Flickr Account of Christine Warner-Morin")
 
+#### list of used book reviews:
+ - https://www.preventionweb.net/files/670_72351.pdf
+ - https://www.researchgate.net/publication/227704544_Climate_change_and_the_imagination
+ - https://academic.oup.com/book/40836
+ - https://nap.nationalacademies.org/catalog/13457/disaster-resilience-a-national-imperative
+ - https://www.amazon.de/-/en/David-Alexander/dp/1857280938
+ - https://www.routledge.com/Natural-Disasters/Alexander/p/book/9781857280944
+
+
+
 Welcome Vladimir Aleksic,
 
 This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
