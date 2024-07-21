@@ -5,21 +5,23 @@
 {% block content %}
 <div class="container-lg my-5">
   <h2 class="text-center about-title">Contribute to Our Project!</h2>
-  <div class="row gy-3">
-    <!-- manually change gutter using g{d}-{n} -->
-    <div class="col-sm-12 col-md-6 col-lg-4">
-      <p class="p-5 bg-primary text-light">Humanity is facing new challenges in times of global warming, landscape
-        degradation, increased social insecurity, massive migrations, and unprecedented globalization, just to name some
-        of the factors. Consequently, scientific knowledge about this phenomenon is rapidly increasing as numerous
-        researchers in many scientific institutions try to understand the main ways to mitigate the negative
-        consequences of human and natural disasters. Even for the most experienced experts, navigating through the
-        "forest" of ever-increasing publications devoted to this topic is complex.
-        Your expertise is crucial in summarizing the knowledge about the latest scientific breakthroughs in this field.
-        Enter the basic data about a favourite book and share your thoughts about it in the review section. Let your
+  <div class="row gy-3 equal-height-row">
+    <div class="equal-height-row col-sm-12 col-md-6 col-lg-4">
+      <p class="p-3 bg-primary text-light py-3"><br>Humanity is facing new challenges in times of global warming, landscape
+        degradation, increased social insecurity, massive and uncontrolled migrations, and unprecedented globalization,
+        to name some of the factors. Consequently, scientific knowledge about this phenomenon is rapidly increasing as devoted
+        researchers in many scientific institutions try to understand the main ways to mitigate the short- and long-term
+        negative consequences of human and natural disasters. Even for the most experienced experts, navigating through
+        the "forest" of ever-increasing publications devoted to these topics is complex.<br><br>
+        We strongly believe your expertise is crucial in summarizing the knowledge about the latest scientific
+        breakthroughs in this field, which is why our institute developed this platform as a simple but effective
+        communication tool.<br><br>
+        We invite you to enter the fundamental data about a favourite book using a few-step procedure. Furthermore,
+        share your thoughts in the <strong>comment</strong> section. Let your
         contribution be the starting point for a lively discussion on the topic that will affect our lives and our
         future, whether we like it or not.</p>
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="equal-height-row col-sm-12 col-md-6 col-lg-4">
       <div class="p-5 bg-primary text-light">
         <form method="post" action="#">
           <div class="mb-3">
@@ -58,7 +60,7 @@
         </form>
       </div>
     </div>
-    <div class="col-lg-4 p-0 bg-white d-none d-lg-block">
+    <div class="equal-height-row col-lg-4 p-0 bg-white d-none d-lg-block">
       <img src="{% static 'images/forest_fire.jpg' %}" alt="image of the forest fire desaster" class="img-fluid">
     </div>
   </div>
