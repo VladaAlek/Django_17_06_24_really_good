@@ -19,6 +19,7 @@ from django.urls import path, include
 #from book.views import my_book
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('summernote/', include('django_summernote.urls')),
     path("", include("book.urls"), name="book-urls"),
-    path('admin/', admin.site.urls)
 ]
