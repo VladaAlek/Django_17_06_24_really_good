@@ -1,0 +1,33 @@
+/* base.html styling */
+
+*{
+    box-sizing: border-box;
+}
+
+nav, main, footer {
+    border: 2px solid rgb(14, 224, 178); /* Temporary border to visualize the layout */
+}
+
+/* index.html styling */
+
+.review-bg-color {
+    background-color: lightgreen;
+}
+
+.book-title {
+    min-height: 300px;
+}
+
+.review-overlook-title {
+    color: rgb(255, 0, 157);
+}
+
+.h2-wrapper {
+    background-color: aqua;
+}
+
+/* about.html styling */
+
+/*.about-title {
+    background-color: aqua;
+}*/
