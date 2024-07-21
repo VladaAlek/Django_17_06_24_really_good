@@ -1,0 +1,35 @@
+[
+    {
+        "model": "book.bibliography",
+        "pk": null,
+        "fields": {
+            "title": "Understanding Earthquakes: A Comprehensive Guide",
+            "author": "John Doe",
+            "publisher": "Seismic Press",
+            "year": 2022,
+            "edition": 1
+        }
+    },
+    {
+        "model": "book.bibliography",
+        "pk": null,
+        "fields": {
+            "title": "Hurricanes and Their Impact: From Theory to Practice",
+            "author": "Jane Smith",
+            "publisher": "Storm Scholars",
+            "year": 2021,
+            "edition": 2
+        }
+    },
+    {
+        "model": "book.bibliography",
+        "pk": null,
+        "fields": {
+            "title": "Flood Management Strategies: Lessons Learned",
+            "author": "Alex Brown",
+            "publisher": "Flood Focus Publishing",
+            "year": 2020,
+            "edition": 3
+        }
+    }
+]
