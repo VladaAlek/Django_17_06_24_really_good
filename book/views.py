@@ -18,7 +18,7 @@ def about(request):
     return render(request, 'book/about.html')
 
 
-def review_detail(request, slug):
+def review_detail(request, review_id):
     """
     Display an individual :model:`book.Review`.
 
@@ -32,8 +32,8 @@ def review_detail(request, slug):
     :template:`book/review_detail.html`
     """
 
-    queryset = Review.objects.filter()
-    review = get_object_or_404(queryset, slug=slug)
+    queryset = Review.objects.all()
+    review = get_object_or_404(queryset, id=review_id)
 
     return render(
         request,
