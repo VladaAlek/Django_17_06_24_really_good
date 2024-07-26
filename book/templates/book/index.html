@@ -5,8 +5,7 @@
 {% block content %}
 <div class="h2-wrapper py-3 d-flex flex-column align-items-center">
     <h2 class="review-overlook-title text-center"><strong>Reviews Overlook</strong></h2>
-    <button type="button" class="contribute-btn btn-outline-info btn-lg"><a class="nav-link"
-            href="{% url 'about' %}">Contribute</a></button>
+    <a href="{% url 'about' %}" class="contribute-btn btn btn-outline-info btn-lg">Contribute</a>
 </div>
 <div class="container-lg my-3">
     <div class="row">
@@ -19,7 +18,6 @@
                     <a href="{% url 'review_detail' review.id %}" class="review-link"><br>
                         <strong>Full Page View</strong>
                     </a>
-                    <!--<i class="bi bi-arrows-angle-expand"></i>-->
                 </h4>
             </div>
             <br>
