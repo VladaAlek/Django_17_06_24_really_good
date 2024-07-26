@@ -38,6 +38,12 @@
     font-weight: bold
 }
 
+.contribute-btn:hover {
+    border: 5px solid rgb(186, 214, 201);
+    background-color:rgb(197, 43, 43);
+    color: rgb(180, 199, 190);
+}
+
 .review-overlook-title {
     color: rgb(197, 43, 43);
     
@@ -60,6 +66,33 @@
 
 /* about.html styling */
 
-/*.about-title {
-    background-color: aqua;
-}*/
+.about-title {
+    background-color: rgb(197, 43, 43);
+    height: 70px;
+}
+.text-collumn {
+    background-color: rgb(180, 199, 190);
+}
+
+label {
+    color: black;
+    font-weight: 600;
+}
+
+
+/* review_detail styling*/
+
+.card-body {
+    background-color: rgb(180, 199, 190);
+    padding: 1rem;
+}
+
+.post-title {
+    color: rgb(197, 43, 43);
+}
+
+hr {
+    max-width: 320px;
+    color: rgb(197, 43, 43);
+    height: 5px;
+}
