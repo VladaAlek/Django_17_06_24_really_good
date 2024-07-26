@@ -34,6 +34,10 @@
  - https://www.routledge.com/Natural-Disasters/Alexander/p/book/9781857280944
 
 
+### Testing
+- accessability testing black/red [webaim.org](https://webaim.org/resources/contrastchecker/?fcolor=000000&bcolor=C52B2B "[webaim.org")
+- accessability testing white/red [webaim.org](https://webaim.org/resources/contrastchecker/?fcolor=FFFFFF&bcolor=C52B2B "[webaim.org")
+
 
 Welcome Vladimir Aleksic,
 
