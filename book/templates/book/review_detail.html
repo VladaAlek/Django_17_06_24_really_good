@@ -6,14 +6,16 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <h1 class="post-title">{{ review.bibliography.title }}</h1>
-                <p class="post-subtitle"> Author: {{ review.bibliography.author }} <br> created by: {{ review.user }}
-                    <br> {{ review.created_on }}</p>
+                <p class="post-subtitle"> Author: <strong>{{ review.bibliography.author }}</strong><br>created by:
+                    <strong>{{ review.user }}</strong>
+                    <br>created on: <strong>{{ review.created_on }}</strong></p>
+                <hr>
                 <div class="d-none d-md-block col-md-6 masthead-image">
                     <img src="{% static 'images/orange_fire_logo.jpg' %}" class="img-fluid"
                         alt="logo in the shape of orange fire">
                 </div>
             </div>
-            
+
             <div class="col-md-6">
                 <div class="card-body">
                     <p class="card-text">
