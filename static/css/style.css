@@ -132,3 +132,10 @@ h3 {
     text-decoration: none;
 }
 
+/* log_out styling */
+
+.logout-container {
+    background-color: rgb(180, 199, 190);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
