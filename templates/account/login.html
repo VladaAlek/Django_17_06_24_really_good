@@ -7,12 +7,12 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container log-in-container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <h3>{% trans "Sign In" %}</h3>
+      <h3 class="h3-class">{% trans "Sign In" %}</h3>
 
-      <p>{% blocktrans %}Welcome back to the <strong>Librarychat site</strong>. To leave new bibliographical entries or
+      <p>{% blocktrans %}Welcome back to the <strong>Librarychat</strong> site. To leave new bibliographical entries or
         book review, please log in. If
         you have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
         first.{% endblocktrans %}</p>
@@ -24,7 +24,7 @@
         {% csrf_token %}
         {{ form.as_p }}
         {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        <input class="login-input" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
         <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
       </form>

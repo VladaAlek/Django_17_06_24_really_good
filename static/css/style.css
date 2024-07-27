@@ -35,13 +35,13 @@
     background-color: rgb(180, 199, 190);
     border-radius: 3px;
     padding: 5px 30px;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .contribute-btn:hover {
     border: 5px solid rgb(186, 214, 201);
     background-color:rgb(197, 43, 43);
-    color: rgb(180, 199, 190);
+    color: black;
 }
 
 .review-overlook-title {
@@ -96,3 +96,39 @@ hr {
     color: rgb(197, 43, 43);
     height: 5px;
 }
+
+/* log_in styling */
+
+.log-in-container {
+    background-color: rgb(180, 199, 190);
+}
+
+h3 {
+    color: black;
+}
+.h3-class {
+    background-color: rgb(197, 43, 43);
+    padding-left: 5px;
+}
+
+.btn-signup {
+    color: rgb(197, 43, 43);
+    border: 2px solid rgb(197, 43, 43);
+    background-color: rgb(180, 199, 190);
+    border-radius: 3px;
+    padding: 5px 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.btn-signup:hover {
+    border: 5px solid rgb(186, 214, 201);
+    background-color:rgb(197, 43, 43);
+    color: black;
+}
+
+.link {
+    color: rgb(197, 43, 43);
+    text-decoration: none;
+}
+
