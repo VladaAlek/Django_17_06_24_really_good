@@ -82,11 +82,15 @@
   </nav>
 
   <main class="flex-shrink-0 main-bg">
-
+    {% if user.is_authenticated %}
+    <p class="text-end m-3 ps-3">You are logged in as {{ user }}</p>
+    {% else %}
+    <p class="text-end m-3"><span class="not-authent-massage">You are not logged in</span></p>
+    <!--delete span if CSS doesnt work ?-->
+    {% endif %}
     {% block content %}
     <!-- Content Goes here -->
     {% endblock content %}
-
   </main>
 
   <!-- Footer -->

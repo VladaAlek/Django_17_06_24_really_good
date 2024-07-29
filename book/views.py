@@ -27,6 +27,12 @@ def review_detail(request, review_id):
     ``review``
         An instance of :model:`book.Review`.
 
+    ``reviews``
+        all reviews related to the same bibliography`.
+
+    ``reviews_count``
+        variable that stores the number of reviews count`.
+
     **Template:**
 
     :template:`book/review_detail.html`
@@ -34,9 +40,14 @@ def review_detail(request, review_id):
 
     queryset = Review.objects.all()
     review = get_object_or_404(queryset, id=review_id)
+    reviews = Review.objects.filter(bibliography=review.bibliography).order_by("-created_on")
+    reviews_count = reviews.count()
 
     return render(
         request,
         "book/review_detail.html",
-        {"review": review},
+        {"review": review,
+        "reviews": reviews,
+        "reviews_count": reviews_count,},
+        
     )
