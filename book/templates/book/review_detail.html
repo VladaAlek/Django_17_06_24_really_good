@@ -1,81 +1,91 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+
+{% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
 
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <h1 class="post-title">{{ review.bibliography.title }}</h1>
-                <p class="post-subtitle"> Author: <strong>{{ review.bibliography.author }}</strong><br>created by:
-                    <strong>{{ review.user }}</strong>
-                    <br>created on: <strong>{{ review.created_on }}</strong></p>
-                <hr>
-                <div class="d-none d-md-block col-md-6 masthead-image">
-                    <img src="{% static 'images/orange_fire_logo.jpg' %}" class="img-fluid"
-                        alt="logo in the shape of orange fire">
+<div class="container-fluid mt-4 custom-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex flex-column flex-md-row align-items-md-center">
+                <div>
+                    <h1 class="post-title">{{ review.bibliography.title }}</h1>
+                    <p class="post-subtitle">
+                        Author: <strong>{{ review.bibliography.author }}</strong><br>
+                        Created by: <strong>{{ review.user }}</strong><br>
+                        Created on: <strong>{{ review.created_on }}</strong>
+                    </p>
+                </div>
+                <div class="d-none d-md-block col-md-4 col-lg-3 ms-md-4">
+                    <img src="{% static 'images/orange_fire_logo.jpg' %}" class="img-fluid" alt="logo in the shape of orange fire">
                 </div>
             </div>
+            <hr>
+        </div>
+    </div>
 
-            <div class="col-md-6">
-                <div class="card-body md">
-                    <p class="card-text">
-                        {{ review.content | safe }}
-                    </p>
+    <div class="row">
+        <div class="col-12">
+            <p class="card-text">
+                {{ review.content | safe }}
+            </p>
+        </div>
+    </div>
+
+    <!-- Creating New Reviews -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card mb-4">
+                <div class="card-body">
+                    {% if user.is_authenticated %}
+                    <h3>Leave a review:</h3>
+                    <p>Posting as: {{ user.username }}</p>
+                    <form id="commentForm" method="post" style="margin-top: 1.3em;">
+                        {{ reviews_form | crispy }}
+                        {% csrf_token %}
+                        <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    </form>
+                    {% else %}
+                    <p>Log in to leave a comment</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Creating New Reviews -->
-<div class="col-md-4 card mb-4 mt-3">
-    <div class="card-body">
-        {% if user.is_authenticated %}
-        <h3>Leave a review:</h3>
-        <p>Posting as: {{ user.username }}</p>
-        <form id="commentForm" method="post" style="margin-top: 1.3em;">
-            {{ reviews_form | crispy }}
-            {% csrf_token %}
-            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
-        </form>
-        {% else %}
-        <p>Log in to leave a comment</p>
-        {% endif %}
+    <!-- Displaying count of reviews -->
+    <div class="row">
+        <div class="col-12">
+            <strong class="text-secondary">
+                <i class="far fa-comments"></i> {{ reviews_count }}
+            </strong>
+        </div>
+        <div class="col-12">
+            <hr>
+        </div>
     </div>
-</div>
 
-<!-- Displaying count of comments -->
-<div class="row">
-    <div class="col-12">
-        <strong class="text-secondary">
-            <i class="far fa-comments"></i> {{ reviews_count }}
-        </strong>
-    </div>
-    <div class="col-12">
-        <hr>
-    </div>
-</div>
-<!-- Displaying Reviews -->
-<div class="row">
-    <div class="col-md-8 card mb-4 mt-3">
-        <h3>Reviews:</h3>
-        <div class="card-body">
-            <!-- We want a for loop inside the empty control tags to iterate through each review in reviews -->
-            {% for review in reviews %}
-            <div class="p-2 review {% if review.user == user %}font-weight-bold{% endif %}">
-                <p>
-                    {{ review.user }}
-                    <span class="font-weight-normal">
-                        {{ review.created_on }}
-                    </span> wrote:
-                </p>
-                <div id="review{{ review.id }}">
-                    {{ review.content | safe }}
+    <!-- Displaying Reviews -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3>Reviews:</h3>
+                    {% for review in reviews %}
+                    <div class="p-2 review {% if review.user == user %}font-weight-bold{% endif %}">
+                        <p>
+                            {{ review.user }}
+                            <span class="font-weight-normal">
+                                {{ review.created_on }}
+                            </span> wrote:
+                        </p>
+                        <div id="review{{ review.id }}">
+                            {{ review.content | safe }}
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
-            <!-- Our for loop ends here -->
-            {% endfor %}
         </div>
     </div>
 </div>

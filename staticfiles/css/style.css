@@ -3,18 +3,10 @@
 *{
     box-sizing: border-box;
 }
-
-/* nav, main, footer {
-    border: 2px solid rgb(14, 224, 31); 
-}
- Temporary border to visualize the layout
-/* index.html styling */
-
-/*.review-bg-color {
-    background-color: rgb(180, 199, 190);
-}
-    /////
-    */
+/*
+#not-authent-message {
+    color: rgb(197, 43, 43);
+} */
 
 .collumns {
     background-color: rgb(180, 199, 190);
@@ -95,6 +87,22 @@ hr {
     max-width: 320px;
     color: rgb(197, 43, 43);
     height: 5px;
+}
+
+.custom-container {
+    max-width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .custom-container {
+        max-width: 90%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .custom-container {
+        max-width: 80%;
+    }
 }
 
 /* log_in styling */

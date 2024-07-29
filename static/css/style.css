@@ -89,6 +89,22 @@ hr {
     height: 5px;
 }
 
+.custom-container {
+    max-width: 100%;
+}
+
+@media (min-width: 960px) {
+    .custom-container {
+        max-width: 90%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .custom-container {
+        max-width: 80%;
+    }
+}
+
 /* log_in styling */
 
 .log-in-container {
