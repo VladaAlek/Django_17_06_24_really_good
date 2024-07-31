@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
+from django.contrib import messages
 from .models import Review
 from .forms import ReviewForm
 
@@ -52,9 +53,22 @@ def review_detail(request, review_id):
             new_review.user = request.user
             new_review.bibliography = review.bibliography
             new_review.save()
+            messages.add_message(request, messages.SUCCESS, 'Review submitted', extra_tags='review')
             return redirect('review_detail', review_id=review.id)
     else:
         review_form = ReviewForm()
+
+    # Filter messages to pass only one 'review' message
+
+    review_message = None
+
+    for message in messages.get_messages(request):
+
+        if 'review' in message.tags:
+
+            review_message = message
+
+            break
 
     return render(
         request,
@@ -63,6 +77,7 @@ def review_detail(request, review_id):
         "reviews": reviews,
         "reviews_count": reviews_count,
         "reviews_form": reviews_form,
+        "review_message": review_message,
         },
         
     )
