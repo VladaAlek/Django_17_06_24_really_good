@@ -93,13 +93,19 @@ hr {
     max-width: 100%;
 }
 
-@media (min-width: 1200px) {
+.p-2 {
+    border: 1px solid rgb(197, 43, 43, 0.5);
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+@media (min-width: 960px) {
     .custom-container {
         max-width: 90%;
     }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1200px) {
     .custom-container {
         max-width: 80%;
     }
