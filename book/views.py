@@ -45,6 +45,17 @@ def review_detail(request, review_id):
     reviews_count = reviews.count()
     reviews_form = ReviewForm()
 
+    if request.method == "POST":
+        review_form = ReviewForm(data=request.POST)
+        if review_form.is_valid():
+            new_review = review_form.save(commit=False)
+            new_review.user = request.user
+            new_review.bibliography = review.bibliography
+            new_review.save()
+            return redirect('review_detail', review_id=review.id)
+    else:
+        review_form = ReviewForm()
+
     return render(
         request,
         "book/review_detail.html",
