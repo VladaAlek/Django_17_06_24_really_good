@@ -3,10 +3,7 @@
 *{
     box-sizing: border-box;
 }
-/*
-#not-authent-message {
-    color: rgb(197, 43, 43);
-} */
+
 
 .collumns {
     background-color: rgb(180, 199, 190);
@@ -121,6 +118,23 @@ hr {
         max-width: 80%;
     }
 }
+
+/* register styling */
+
+
+.h1-field {
+    background-color: rgb(180, 199, 190);
+    padding-top: 1rem;
+    margin-left: 2px;
+}
+
+.register-link {
+    color: rgb(197, 43, 43);
+    text-decoration: none;
+}
+
+
+
 
 /* log_in styling */
 

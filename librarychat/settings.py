@@ -36,7 +36,7 @@ ALLOWED_HOSTS = ['8000-vladaalek-django170624r-v5jh3fd2oy3.ws.codeinstitute-ide.
 '.herokuapp.com']
 
 
-# Application definition
+# Application definitiongit a
 
 INSTALLED_APPS = [
     'crispy_forms',
