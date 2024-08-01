@@ -32,6 +32,7 @@
  - https://nap.nationalacademies.org/catalog/13457/disaster-resilience-a-national-imperative
  - https://www.amazon.de/-/en/David-Alexander/dp/1857280938
  - https://www.routledge.com/Natural-Disasters/Alexander/p/book/9781857280944
+ - https://www.amazon.com/Disaster-Research-Multidisciplinary-International-Perspectives/dp/1138051616
 
 
 ### Testing
