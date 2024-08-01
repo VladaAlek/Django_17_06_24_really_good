@@ -24,7 +24,7 @@
             <p class="review-author"><strong>{{ review.bibliography.author }}</strong></p>
             <p>created on: <strong>{{  review.created_on }}</strong> <br> by:
                 <strong>{{ review.bibliography.reader }}</strong> </p>
-            <p class="review-content">{{ review.content }}</p>
+            <p class="review-content">{{ review.bibliography.summary }}</p>
         </div>
         {% endfor %}
     </div>

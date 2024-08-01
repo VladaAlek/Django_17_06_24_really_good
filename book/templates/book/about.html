@@ -7,9 +7,11 @@
   <h2 class="text-center about-title pt-3 pb-3 mb-3"><strong>Contribute to Our Project!</strong></h2>
   <div class="row gy-3 equal-height-row">
     <div class="equal-height-row col-sm-12 col-md-6 col-lg-4">
-      <p class="text-collumn p-3 text-dark py-3"><br>Humanity is facing new challenges in times of global warming, landscape
+      <p class="text-collumn p-3 text-dark py-3"><br>Humanity is facing new challenges in times of global warming,
+        landscape
         degradation, increased social insecurity, massive and uncontrolled migrations, and unprecedented globalization,
-        to name some of the factors. Consequently, scientific knowledge about this phenomenon is rapidly increasing as devoted
+        to name some of the factors. Consequently, scientific knowledge about this phenomenon is rapidly increasing as
+        devoted
         researchers in many scientific institutions try to understand the main ways to mitigate the short- and long-term
         negative consequences of human and natural disasters. Even for the most experienced experts, navigating through
         the "forest" of ever-increasing publications devoted to these topics is complex.<br><br>
@@ -23,39 +25,31 @@
     </div>
     <div class="text-collumn equal-height-row col-sm-12 col-md-6 col-lg-4">
       <div class="p-5 text-light">
-        <form method="post" action="#">
-          <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="title" name="title" required>
-          </div>
-          <div class="mb-3">
-            <label for="authors" class="form-label">Author(s)</label>
-            <input type="text" class="form-control" id="authors" name="authors" required>
-          </div>
-          <div class="mb-3">
-            <label for="publisher" class="form-label">Publisher</label>
-            <input type="text" class="form-control" id="publisher" name="publisher" required>
-          </div>
-          <div class="mb-3">
-            <label for="year" class="form-label">Year</label>
-            <input type="number" class="form-control" id="year" name="year" required>
-          </div>
-          <div class="mb-3">
-            <label for="edition" class="form-label">Edition (Optional)</label>
-            <input type="text" class="form-control" id="edition" name="edition">
-          </div>
-          <div class="mb-3">
-            <div class="d-grid gap-2">
-              <button type="submit" class="btn btn-success btn-lg">Submit</button>
-              <div class="btn-group">
-                <a href="#" class="btn btn-info">Read</a>
-                <a href="#" class="btn btn-warning">Update</a>
-              </div>
-              <div class="btn-group">
-                <a href="#" class="btn btn-danger">Delete</a>
-                <a href="#" class="btn btn-dark">Comment</a>
-                <!--ad button See all books -->
-              </div>
+        <form method="post" action="{% url 'about' %}">
+
+          {% csrf_token %}
+
+          {{ summary_form.as_p }}
+
+          <div class="d-grid gap-2">
+
+            <button type="submit" class="btn btn-success btn-lg">Submit</button>
+
+            <div class="btn-group">
+
+              <a href="#" class="btn btn-info">Read</a>
+
+              <a href="#" class="btn btn-warning">Update</a>
+
+            </div>
+
+            <div class="btn-group">
+
+              <a href="#" class="btn btn-danger">Delete</a>
+
+              <a href="#" class="btn btn-dark">Comment</a>
+
+              <!--ad button See all books -->
             </div>
           </div>
         </form>

@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.contrib import messages
 from .models import Review, Bibliography
-from .forms import ReviewForm, SummaryForm
+from .forms import ReviewForm, SummaryForm, BibliographyForm
 
 # Create your views here.
 
@@ -11,13 +11,25 @@ from .forms import ReviewForm, SummaryForm
 class ReviewList(generic.ListView):
     queryset = Review.objects.all()
     template_name = "book/index.html"
-    paginate_by = 6
+    paginate_by = 9
 
 
 # Function-based views
 
 def about(request):
-    return render(request, 'book/about.html')
+    if request.method == "POST":
+        summary_form = BibliographyForm(request.POST)
+        if summary_form.is_valid():
+            new_summary = summary_form.save(commit=False)
+            new_summary.reader = request.user
+            new_summary.save()
+            messages.success(request, "Summary submitted", extra_tags="summary")
+            return redirect("about")
+    else:
+        summary_form = BibliographyForm()
+    return render(request, "book/about.html", {"summary_form": summary_form})
+
+
 
 
 def review_detail(request, review_id):
