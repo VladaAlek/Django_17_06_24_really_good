@@ -33,6 +33,9 @@
  - https://www.amazon.de/-/en/David-Alexander/dp/1857280938
  - https://www.routledge.com/Natural-Disasters/Alexander/p/book/9781857280944
  - https://www.amazon.com/Disaster-Research-Multidisciplinary-International-Perspectives/dp/1138051616
+ - https://https://www.sciencedirect.com/science/article/pii/S2590061724000279
+ - https://www.amazon.de/-/en/Dr-Allen-Beattie/dp/B0CLH4J3SZ
+ 
 
 
 ### Testing
