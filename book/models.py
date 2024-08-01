@@ -9,6 +9,7 @@ class Bibliography(models.Model):
     publisher = models.CharField(max_length=100)
     year = models.IntegerField()
     edition = models.IntegerField(blank=True, null=True)
+    summary = models.TextField(blank=True, null=True)
 
     
 class Review(models.Model):
