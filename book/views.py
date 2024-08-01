@@ -11,7 +11,7 @@ from .forms import ReviewForm, SummaryForm, BibliographyForm
 class ReviewList(generic.ListView):
     queryset = Review.objects.all()
     template_name = "book/index.html"
-    paginate_by = 9
+    paginate_by = 6
 
 
 # Function-based views

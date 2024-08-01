@@ -53,6 +53,21 @@
     max-height: 200px;
 }
 
+
+/* index.html styling */
+
+.page-link {
+    color: rgb(197, 43, 43);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+p {
+    text-align: justify;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
 /* about.html styling */
 
 .about-title {
