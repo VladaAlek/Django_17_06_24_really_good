@@ -28,12 +28,9 @@ def about(request):
     else:
         summary_form = BibliographyForm()
 
-    # Get the most recent review
-    recent_review = Review.objects.order_by('-created_on').first()
 
     return render(request, "book/about.html", {
         "summary_form": summary_form,
-        "recent_review": recent_review,
         }
         )
 
