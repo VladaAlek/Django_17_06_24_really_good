@@ -7,7 +7,7 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields =('content',)
 
-#class ContributeForm(forms.ModelForm):
-    #class Meta:
-       # model = Bibliography
-       # fields =('summary',)
+class SummaryForm(forms.ModelForm):
+    class Meta:
+       model = Bibliography
+       fields =('summary',)

@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.contrib import messages
-from .models import Review
-from .forms import ReviewForm
+from .models import Review, Bibliography
+from .forms import ReviewForm, SummaryForm
 
 # Create your views here.
 
@@ -81,3 +81,66 @@ def review_detail(request, review_id):
         },
         
     )
+
+
+def create_summary(request):
+    
+    """
+
+    **Context**
+
+    ``summary`` 
+    an instance of model: `book.Bibliography`
+
+    ``summaries`` 
+    all summaries related to the same bibliography
+
+    **Template:**
+
+    :template:`book/index.html`
+
+    """
+    
+
+    if request.method == "POST":
+        summary_form = SummaryForm(data=request.Post)
+        if summary_form.is_valid():
+            new_summary = summary_form.save(commit=False)
+            new_summary.user = request.user
+            new_summary.save()
+            messages.add_message(request, messages.SUCCESS, 'Summary submitted', extra_tags='summary')
+            return redirect('index')
+        else:
+            summary_form = SummaryForm()
+    
+ 
+   #Filter messages to pass only one 'review' message
+
+    
+    summary_message = None
+
+    for message in messages.get_messages(request):
+
+        if 'summary' in message.tags:
+
+            summary_message = message
+
+            break
+
+    summaries = Bibliography.objects.all()
+
+    return render(
+        request,
+        
+        "book/index.html",
+        {
+            "summaries": summaries,
+            "summary_form" : summary_form,
+            "summary_message": summary_message,
+        },
+
+    )
+
+#queryset = Bibliography.objects(all)
+    #bibliography = get_object_or_404(queryset, summaries=bibliography_summary)
+    #summaries  Bibliography.objects.filter(bi)
