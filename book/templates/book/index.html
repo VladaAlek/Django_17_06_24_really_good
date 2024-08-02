@@ -29,7 +29,7 @@
 </div>
 <div class="container-lg my-3">
     <div class="row">
-        {% for review in review_list %}
+        {% for review in object_list %}
         <div class="col-sm-12 col-md-6 col-xxl-4 collumns pt-3">
             <div class="h4-wrapper pt-3 max-height-responsive">
                 <h4 class="book-title text-white text-center">
@@ -41,7 +41,7 @@
                 </h4>
             </div>
             <br>
-            <p class="review-author"><strong>{{ review.bibliography.author }}</strong></p>
+            <p class="review-author"><strong>{{ bibliography.author }}</strong></p>
             <p>created on: <strong>{{  review.created_on }}</strong> <br> by:
                 <strong>{{ review.bibliography.reader }}</strong> </p>
             <p class="review-content">{{ review.bibliography.summary }}</p>
