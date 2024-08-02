@@ -11,7 +11,7 @@ from .forms import ReviewForm, SummaryForm, BibliographyForm
 class ReviewList(generic.ListView):
     queryset = Review.objects.all()
     template_name = "book/index.html"
-    paginate_by = 6
+    paginate_by = 12
 
 
 # Function-based views
@@ -23,14 +23,27 @@ def about(request):
             new_summary = summary_form.save(commit=False)
             new_summary.reader = request.user
             new_summary.save()
-            messages.success(request, "Summary submitted", extra_tags="summary")
+            messages.success(request, "New bibliographical entry submitted", extra_tags="about")
             return redirect("about")
     else:
         summary_form = BibliographyForm()
 
 
+    # Filter messages to pass only one 'about' message
+
+    about_message = None
+
+    for message in messages.get_messages(request):
+
+        if 'about' in message.tags:
+
+            about_message = message
+
+            break
+
     return render(request, "book/about.html", {
         "summary_form": summary_form,
+        "about_message": about_message,     
         }
         )
 
@@ -157,7 +170,3 @@ def create_summary(request):
         },
 
     )
-
-#queryset = Bibliography.objects(all)
-    #bibliography = get_object_or_404(queryset, summaries=bibliography_summary)
-    #summaries  Bibliography.objects.filter(bi)

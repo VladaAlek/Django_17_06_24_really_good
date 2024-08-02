@@ -27,3 +27,5 @@ class SummaryForm(forms.ModelForm):
        model = Bibliography
        fields =('summary',)
 
+
+
