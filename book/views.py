@@ -14,6 +14,12 @@ class ReviewList(generic.ListView):
     paginate_by = 6
 
 
+class ReviewList(generic.ListView):
+    queryset = Bibliography.objects.all()
+    template_name = "book/index.html"
+    paginate_by = 6
+
+
 # Function-based views
 
 def about(request):
