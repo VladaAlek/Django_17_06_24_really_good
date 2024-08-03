@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="h2-wrapper py-3 d-flex flex-column align-items-center">
-    <h2 class="review-overlook-title text-center"><strong>Reviews Overlook</strong></h2>
+    <h2 class="review-overlook-title text-center"><strong>List of Books</strong></h2>
 </div>
 <div class="d-flex justify-content-around align-items-center py-3">
     {% if is_paginated %}
@@ -29,22 +29,22 @@
 </div>
 <div class="container-lg my-3">
     <div class="row">
-        {% for review in object_list %}
+        {% for bibliography in object_list %}
         <div class="col-sm-12 col-md-6 col-xxl-4 collumns pt-3">
             <div class="h4-wrapper pt-3 max-height-responsive">
                 <h4 class="book-title text-white text-center">
-                    {{ review.bibliography.title }}
+                    {{ bibliography.title }}
                     <br>
-                    <a href="{% url 'review_detail' review.id %}" class="review-link"><br>
+                    <a href="{% url 'review_detail' bibliography.id %}" class="review-link"><br>
                         <strong class="">Comment Section</strong>
                     </a>
                 </h4>
             </div>
             <br>
             <p class="review-author"><strong>{{ bibliography.author }}</strong></p>
-            <p>created on: <strong>{{  review.created_on }}</strong> <br> by:
-                <strong>{{ review.bibliography.reader }}</strong> </p>
-            <p class="review-content">{{ review.bibliography.summary }}</p>
+            <p>created on: <strong>{{  bibliography.created_on }}</strong> <br> by:
+                <strong>{{ bibliography.reader }}</strong> </p>
+            <p class="review-content">{{ bibliography.summary }}</p>
         </div>
         {% endfor %}
     </div>
