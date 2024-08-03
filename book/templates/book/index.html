@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="h2-wrapper py-3 d-flex flex-column align-items-center">
-    <h2 class="review-overlook-title text-center"><strong>List of Books</strong></h2>
+    <h2 class="list-of-books-title text-center"><strong>List of Books</strong></h2>
 </div>
 <div class="d-flex justify-content-around align-items-center py-3">
     {% if is_paginated %}
@@ -41,10 +41,10 @@
                 </h4>
             </div>
             <br>
-            <p class="review-author"><strong>{{ bibliography.author }}</strong></p>
+            <p class="book-author"><strong>{{ bibliography.author }}</strong></p>
             <p>created on: <strong>{{  bibliography.created_on }}</strong> <br> by:
                 <strong>{{ bibliography.reader }}</strong> </p>
-            <p class="review-content">{{ bibliography.summary }}</p>
+            <p class="book-content">{{ bibliography.summary }}</p>
         </div>
         {% endfor %}
     </div>
