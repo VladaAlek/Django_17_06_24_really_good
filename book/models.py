@@ -10,6 +10,8 @@ class Bibliography(models.Model):
     year = models.IntegerField()
     edition = models.IntegerField(blank=True, null=True)
     summary = models.TextField(blank=True, null=True)
+    created_on = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+
 
     
 class Review(models.Model):
