@@ -43,6 +43,7 @@
 - accessability testing white/red [webaim.org](https://webaim.org/resources/contrastchecker/?fcolor=FFFFFF&bcolor=C52B2B "[webaim.org")
 
 - [review submited testing](static/images/review%20submited%20testing.png); [review submited testing success](static/images/review%20submited%20testing%201.png);
+- [book submited testing success](static/images/book%20submited%20testing.png);
 
 ##### Validation
 - CSS
