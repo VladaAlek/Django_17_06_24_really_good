@@ -23,9 +23,5 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
-    path("", include("book.urls"), name="book-urls"),  
-    path('<int:review_id>/edit/', views.review_detail, name='review_edit'),
-    path('delete_review/<int:review_id>', views.review_edit, name="review_delete"),
-    #path('<int:review_id>/delete/', views.review_delete, name='review_delete'),
-    
+    path("", include("book.urls"), name="book-urls"),      
 ]

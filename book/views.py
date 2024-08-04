@@ -178,35 +178,35 @@ def create_summary(request):
 
     )
 
-    def review_edit(request, review_id):
-        """
-        view to edit reviews 
-        """
+def review_edit(request, review_id):
+    """
+    view to edit reviews 
+    """
 
-        # retrive object from db based on review id
-        review = get_object_or_404(Review, review_id)
+    # retrive object from db based on review id
+    review = get_object_or_404(Review, review_id)
 
-        if request.method == "POST":
+    if request.method == "POST":
 
-            # creates an instance of 'ReviewForm' with the sumbitted data
-            review_form = ReviewForm(data=request.POST, instance=review)
+        # creates an instance of 'ReviewForm' with the sumbitted data
+        review_form = ReviewForm(data=request.POST, instance=review)
 
             
-            # check condition: user is the author of the review, user is loged in
-            if review_form.is_valid() and review.user == request.user:
-                review_form.save()
-                messages.add_message(request. messages.SUCCESS, "Error updating review!")
-            else:
-                messages.add_message(request, messages.ERROR, "Error updating comment!")
-        # checked condition failed: returnt the original instance
+        # check condition: user is the author of the review, user is loged in
+        if review_form.is_valid() and review.user == request.user:
+            review_form.save()
+            messages.add_message(request. messages.SUCCESS, "Error updating review!")
         else:
-            review_form = ReviewForm(instance=review)
+            messages.add_message(request, messages.ERROR, "Error updating comment!")
+    # checked condition failed: returnt the original instance
+    else:
+        review_form = ReviewForm(instance=review)
 
-        # renders review_detail page
-        return HttpResponseRedirect(reverse('review_detail'))
+    # renders review_detail page
+    return HttpResponseRedirect(reverse('review_detail'))
 
 
-    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+#return HttpResponseRedirect(reverse('post_detail', args=[review.id]))
 
 
 def comment_delete(request, review_id):
