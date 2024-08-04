@@ -17,7 +17,8 @@
                     </p>
                 </div>
                 <div class="d-none d-md-block col-md-4 col-lg-3 ms-md-4">
-                    <img src="{% static 'images/orange_fire_logo.jpg' %}" class="img-fluid" alt="logo in the shape of orange fire">
+                    <img src="{% static 'images/orange_fire_logo.jpg' %}" class="img-fluid"
+                        alt="logo in the shape of orange fire">
                 </div>
             </div>
             <hr>
@@ -82,6 +83,12 @@
                         </p>
                         <div id="review{{ review.id }}">
                             {{ review.content | safe }}
+                        </div>
+                        <!-- edit review section -->
+                        <div class="edit-wrapper d-flex justify-content-center">
+                            {% if user.is_authenticated and review.user == user %}
+                            <button class="btn btn-edit" review_id="{{ review.id }}">Edit</button>
+                            {% endif %}
                         </div>
                     </div>
                     {% endfor %}
