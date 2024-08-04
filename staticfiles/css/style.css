@@ -174,7 +174,8 @@ h3 {
 
 
 .btn-signup,
-.btn-edit {
+.btn-edit,
+.btn-delete {
     color: rgb(197, 43, 43);
     border: 2px solid rgb(197, 43, 43);
     background-color: rgb(180, 199, 190);
@@ -182,10 +183,12 @@ h3 {
     padding: 5px 30px;
     font-weight: bold;
     margin-bottom: 30px;
+    margin: 2px;
 }
 
 .btn-signup:hover,
-.btn-edit:hover {
+.btn-edit:hover,
+.btn-delete:hover {
     border: 5px solid rgb(186, 214, 201);
     background-color:rgb(197, 43, 43);
     color: black;

@@ -206,3 +206,21 @@ def create_summary(request):
         return HttpResponseRedirect(reverse('review_detail'))
 
 
+    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+def comment_delete(request, review_id):
+    """
+    view to delete comment
+    """
+    
+    review = get_object_or_404(Review, review_id)
+    
+
+    if review.user == request.user:
+        review.delete()
+        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+
+        return HttpResponseRedirect(reverse('review_detail', args=[slug]))

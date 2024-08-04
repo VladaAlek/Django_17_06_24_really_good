@@ -104,6 +104,16 @@
         </div>
         {% endif %}
         {% endfor %}
+
+        <!-- Review_Detail messages -->
+        {% for message in messages %}
+        {% if 'edit' in message.tags %}
+        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+          {{ message | safe }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
+        {% endfor %}
       </div>
     </div>
   </div>

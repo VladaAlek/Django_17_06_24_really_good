@@ -22,7 +22,7 @@ for (let button of editButtons) {
     let reviewContent = document.getElementById(`review${reviewId}`).innerText;
     commentText.value = reviewContent;
     submitButton.innerText = "Update";
-    commentForm.setAttribute("action", `edit_review/${reviewId}/edit/`);
+    commentForm.setAttribute("action", `edit_review/${reviewId}`);
   });
 }
 
@@ -31,7 +31,7 @@ for (let button of editButtons) {
 * Initializes deletion functionality for the provided delete buttons.
 * 
 * For each button in the `deleteButtons` collection:
-* - Retrieves the associated reviews's ID upon click.
+* - Retrieves the associated comment's ID upon click.
 * - Updates the `deleteConfirm` link's href to point to the 
 * deletion endpoint for the specific comment.
 * - Displays a confirmation modal (`deleteModal`) to prompt 
