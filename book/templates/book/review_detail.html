@@ -43,8 +43,9 @@
                     <h3>Leave a review:</h3>
                     <p>Posting as: {{ user.username }}</p>
                     <form id="commentForm" method="post" style="margin-top: 1.3em;">
-                        {{ reviews_form | crispy }}
                         {% csrf_token %}
+                        {{ reviews_form | crispy }}
+                        <textarea id="id_body" name="content" class="form-control"></textarea>
                         <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
                     </form>
                     {% else %}
@@ -87,7 +88,7 @@
                         <!-- edit review section -->
                         <div class="edit-wrapper d-flex justify-content-center">
                             {% if user.is_authenticated and review.user == user %}
-                            <button class="btn btn-edit" review_id="{{ review.id }}">Edit</button>
+                            <button class="btn btn-edit" id="btn-edit" review_id="{{ review.id }}">Edit</button>
                             {% endif %}
                         </div>
                     </div>
@@ -99,3 +100,7 @@
 </div>
 
 {% endblock content %}
+
+{% block extras %}
+<script src="{% static 'js/comments.js' %}"></script>
+{% endblock %}
