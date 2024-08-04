@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.http import HttpResponseRedirect
 from django.views import generic
 from django.contrib import messages
 from .models import Review, Bibliography
@@ -176,3 +177,32 @@ def create_summary(request):
         },
 
     )
+
+    def review_edit(request, review_id):
+        """
+        view to edit reviews 
+        """
+
+        # retrive object from db based on review id
+        review = get_object_or_404(Review, review_id)
+
+        if request.method == "POST":
+
+            # creates an instance of 'ReviewForm' with the sumbitted data
+            review_form = ReviewForm(data=request.POST, instance=review)
+
+            
+            # check condition: user is the author of the review, user is loged in
+            if review_form.is_valid() and review.user == request.user:
+                review_form.save()
+                messages.add_message(request. messages.SUCCESS, "Error updating review!")
+            else:
+                messages.add_message(request, messages.ERROR, "Error updating comment!")
+        # checked condition failed: returnt the original instance
+        else:
+            review_form = ReviewForm(instance=review)
+
+        # renders review_detail page
+        return HttpResponseRedirect(reverse('review_detail'))
+
+

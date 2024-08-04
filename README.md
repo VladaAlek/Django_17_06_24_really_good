@@ -42,7 +42,7 @@
 - accessability testing black/red [webaim.org](https://webaim.org/resources/contrastchecker/?fcolor=000000&bcolor=C52B2B "[webaim.org")
 - accessability testing white/red [webaim.org](https://webaim.org/resources/contrastchecker/?fcolor=FFFFFF&bcolor=C52B2B "[webaim.org")
 
-- [review submited testing](static/images/review%20submited%20testing.png); [review submited testing success](static/images/review%20submited%20testing%201.png);
+- [review submited testing](static/images/review%20submited%20testing.png); [review submited testing success](static/images/review%20submited%20testing%201.png); explanation: extra code added to target the precise success message. The captures show initial and end stage of development.
 - [book submited testing success](static/images/book%20submited%20testing.png);
 
 ##### Validation

@@ -16,11 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-#from book.views import my_book
+from book import views
+
 
 urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
-    path("", include("book.urls"), name="book-urls"),
+    path("", include("book.urls"), name="book-urls"),  
+    path('edit_review/<int:review_id>', views.review_detail, name="review_edit"),
 ]
