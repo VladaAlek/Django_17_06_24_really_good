@@ -1,11 +1,88 @@
 
+# Book Management and Commenting System - Disaster Research  Unit Bibliography
 
+## Objective
+
+This basic project enables end-users to create, read, update, and delete entries for book titles on specific topics, thereby establishing a unique database. An added important feature is the "comment" option, providing a platform for readers to engage in discussions and share their thoughts.
+
+
+## User Experience (UX) Section
+
+### main features and structure  
+
+ **Home Page**
+
+ - Landing area offers the book overview of the six titles. Title, author, time of the entry creation, contributors identity and short resume.
+ 
+
+![Landing Page](./static/images/landing_area.png)
+
+
+ - **About page**
+ is divided in three sections:
+
+![About Page](./static/images/about_page.png)
+
+ - a: short textual explanation about the purpose of the project 
+ - b: Form section Make it posible for the users to enter and submit bibliographical units in the data base. Further development: "Read", "Update", and "Delete" buttons will be deleted. "Delete" button will become functional. *Superuser* and the *author of the entry* will be able to delete db-elements, which should cause the deletion of all reviews related to this specific entry. "Comment button" will become a direct link to the review section. 
+ - c: Capture Further development: The Contact form, similar to one presented in "I think Therefore I Blog," will be replaced to enhance cooperation with the product owner and allow minor corrections of book entries. More attention will be paid to the style of this page.
+
+
+#### Navigation
+ - *Home page* 1: by clicking on DRU Bibliography in navbar 2: Home link in navbar 3: 
+ - *List of book navigation* - Next and Prev button introduced [next Only](static/images/next_only.png); [Prev Next](static/images/prev_next.png); [Prev only](static/images/prev_only.png);
+ - *Contribute* 1: by clicking on the Contribute button on the Home page (in the second stage, the Contribute link will be added to the navbar)
+ - *Comment section* by clicking on the words Comment Section on Home page
+ - *About page* 1: About link in navbar 2: Contribute button in Home page
+
+#### Authentification
+
+All required function have been incorporated: [Register_Log In](static/images/register_login.png); [Log In](static/images/log_in.png); 
+[Loged In](static/images/loged_in.png); [Sign Up](static/images/sign_up.png); [Sign Out](static/images/sign_out.png);
+
+
+
+
+## Users Benefits and Goals
+
+- Product Owner 
+    establish a powerful tool for knowledge dissemination, networking activities, sharing and acquiring cutting-edge ideas on specific topics
+
+- Final User
+    
+#### A) For the first-time user
+    dynamic digital platform to contribute to and navigate through the content of book entries 
+
+#### For returning and frequent users
+    a reliable source of the latest literature on the specific topic, a place to communicate with colleagues, find out what the scientific community members think on particular issues, or even their books that became part of this project.
+### Design
+
+**Landing Page**
+
+
+
+**Data Management Page**
+![CRUD Page](./static/images/crud.png)
+
+
+
+![ERD](./static/images/ERD.png)
+
+
+## Technologies Used
+ -  *Frontend:* HTML, CSS, JS, Bootstrap
+ -  *Backend:* Python, Djanto, SQL
+
+
+
+
+## Model Design nad ERD
 ![ERD Book](./static/images/ERD_Book.png)
 ![ERD Book](./static/images/ERD_Review.png)
 
 
 
-## Technologies and Software Used
+## Software Used
 
 - navbar in base.html, inspiration from: [Shaun (Net Ninja)](https://github.com/iamshaunjp/bootstrap-5-tutorial/blob/lesson-9/index.html "Shaun (Net Ninja)")
 - responsive design in index.html and about.html, inspiration from: [Shaun (Net Ninja)](https://github.com/iamshaunjp/bootstrap-5-tutorial/blob/lesson-7/index.html "Shaun (Net Ninja)")
@@ -17,8 +94,13 @@
  - [StackOverflow](https://stackoverflow.com/questions/33934947/searching-by-username-field-in-django-admin/ "StackOverflow") 
 
 
+## Deployment
 
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+- https://www.elephantsql.com/
+
+
+- 
+
 
 ## Acknowledgments
 
