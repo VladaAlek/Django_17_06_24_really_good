@@ -5,99 +5,111 @@
 {% load crispy_forms_tags %}
 
 <div class="container-fluid mt-4 custom-container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="d-flex flex-column flex-md-row align-items-md-center">
-                <div>
-                    <h1 class="post-title">{{ review.bibliography.title }}</h1>
-                    <p class="post-subtitle">
-                        Author: <strong>{{ review.bibliography.author }}</strong><br>
-                        Created by: <strong>{{ review.user }}</strong><br>
-                        Created on: <strong>{{ review.created_on }}</strong>
+    <!-- Display all bibliographies -->
+    {% for bibliography in bibliographies %}
+    <div class="col-md-12">
+        <div class="d-flex flex-column flex-md-row align-items-md-center">
+            {% for review in reviews %}
+            {% if review.bibliography == bibliography %}
+            <div>
+                <h1 class="post-title">{{ bibliography.title }}</h1>
+                {% for review in reviews %}
+                {% if review.bibliography == bibliography %}
+                <p class="post-subtitle">
+                    Author: <strong>{{ bibliography.author }}</strong><br>
+                    Created by: <strong>{{ bibliography.user }}</strong><br>
+                    Created on: <strong>{{ bibliography.created_on }}</strong>
+                </p>
+            </div>
+
+            <div class="d-none d-md-block col-md-4 col-lg-3 ms-md-4">
+                <img src="{% static 'images/orange_fire_logo.jpg' %}" class="img-fluid"
+                    alt="logo in the shape of orange fire">
+            </div>
+
+        </div>
+        <hr>
+    </div>
+</div>
+<!-- Display reviews related to this bibliography -->
+<div class="row">
+    <div class="col-12">
+        <h3>Book's Summary</h3>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <p class="card-text p-translucent">
+            {{ bibliography.summary | safe }}
+        </p>
+    </div>
+</div>
+
+<!-- Creating New Reviews -->
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <div class="card-body">
+                {% if user.is_authenticated %}
+                <h3>Leave a review:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form id="commentForm" method="post" style="margin-top: 1.3em;">
+                    {% csrf_token %}
+                    {{ reviews_form | crispy }}
+                    <textarea id="id_body" name="content" class="form-control"></textarea>
+                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+                </form>
+                {% else %}
+                <p>Log in to leave a comment</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Displaying count of reviews -->
+<div class="row">
+    <div class="col-12">
+        <strong class="text-secondary">
+            <i class="far fa-comments"></i> {{ reviews_count }}
+        </strong>
+    </div>
+    <div class="col-12">
+        <hr>
+    </div>
+</div>
+
+<!-- Displaying Reviews -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3>Reviews:</h3>
+                {% for review in reviews %}
+                {% if review.bibliography == bibliography %}
+                <div class="p-2 review {% if review.user == user %}font-weight-bold{% endif %}">
+                    <p>
+                        {{ review.user }}
+                        <span class="font-weight-normal">
+                            {{ review.created_on }}
+                        </span> wrote:
                     </p>
-                </div>
-                <div class="d-none d-md-block col-md-4 col-lg-3 ms-md-4">
-                    <img src="{% static 'images/orange_fire_logo.jpg' %}" class="img-fluid"
-                        alt="logo in the shape of orange fire">
-                </div>
-            </div>
-            <hr>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12">
-            <h3>Book's Summary</h3>
-            <p class="card-text p-translucent">
-                {{ review.content | safe }}
-            </p>
-        </div>
-    </div>
-
-    <!-- Creating New Reviews -->
-    <div class="row mt-4">
-        <div class="col-md-12">
-            <div class="card mb-4">
-                <div class="card-body">
-                    {% if user.is_authenticated %}
-                    <h3>Leave a review:</h3>
-                    <p>Posting as: {{ user.username }}</p>
-                    <form id="commentForm" method="post" style="margin-top: 1.3em;">
-                        {% csrf_token %}
-                        {{ reviews_form | crispy }}
-                        <textarea id="id_body" name="content" class="form-control"></textarea>
-                        <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
-                    </form>
-                    {% else %}
-                    <p>Log in to leave a comment</p>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Displaying count of reviews -->
-    <div class="row">
-        <div class="col-12">
-            <strong class="text-secondary">
-                <i class="far fa-comments"></i> {{ reviews_count }}
-            </strong>
-        </div>
-        <div class="col-12">
-            <hr>
-        </div>
-    </div>
-
-    <!-- Displaying Reviews -->
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h3>Reviews:</h3>
-                    {% for review in reviews %}
-                    <div class="p-2 review {% if review.user == user %}font-weight-bold{% endif %}">
-                        <p>
-                            {{ review.user }}
-                            <span class="font-weight-normal">
-                                {{ review.created_on }}
-                            </span> wrote:
-                        </p>
-                        <div id="review{{ review.id }}">
-                            {{ review.content | safe }}
-                        </div>
-                        <!-- delete and edit review button section -->
-                        <div class="edit-wrapper d-flex justify-content-center">
-                            {% if user.is_authenticated and review.user == user %}
-                            <button class="btn btn-edit" id="btn-edit" review_id="{{ review.id }}">Edit</button>
-                            <button class="btn btn-delete" comment_id="{{ review.id }}">Delete</button>
-                            {% endif %}
-                        </div>
+                    <div id="review{{ review.id }}">
+                        {{ review.content | safe }}
                     </div>
-                    {% endfor %}
+                    <!-- delete and edit review button section -->
+                    <div class="edit-wrapper d-flex justify-content-center">
+                        {% if user.is_authenticated and review.user == user %}
+                        <button class="btn btn-edit" id="btn-edit" review_id="{{ review.id }}">Edit</button>
+                        <button class="btn btn-delete" comment_id="{{ review.id }}">Delete</button>
+                        {% endif %}
+                    </div>
                 </div>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>
+</div>
+{% endif %}
 </div>
 <!-- Delete confirmation modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -119,6 +131,8 @@
         </div>
     </div>
 </div>
+
+    {% endfor %}
 
 {% endblock content %}
 

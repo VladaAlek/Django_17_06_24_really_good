@@ -10,15 +10,10 @@ from .forms import ReviewForm, SummaryForm, BibliographyForm
 # Class-based views
 
 class ReviewList(generic.ListView):
-    queryset = Review.objects.all()
-    template_name = "book/index.html"
-    paginate_by = 6
-
-
-class ReviewList(generic.ListView):
     queryset = Bibliography.objects.all()
     template_name = "book/index.html"
     paginate_by = 6
+
 
 
 # Function-based views
@@ -77,8 +72,8 @@ def review_detail(request, review_id):
     :template:`book/review_detail.html`
     """
 
-    queryset = Review.objects.all()
-    review = get_object_or_404(queryset, id=review_id)
+    #queryset = Review.objects.all()
+    review = get_object_or_404(Review, id=review_id)
     reviews = Review.objects.filter(bibliography=review.bibliography).order_by("-created_on")
     reviews_count = reviews.count()
     reviews_form = ReviewForm()
@@ -184,7 +179,7 @@ def review_edit(request, review_id):
     """
 
     # retrive object from db based on review id
-    review = get_object_or_404(Review, review_id)
+    review = get_object_or_404(Review, id=review_id)
 
     if request.method == "POST":
 
@@ -195,7 +190,7 @@ def review_edit(request, review_id):
         # check condition: user is the author of the review, user is loged in
         if review_form.is_valid() and review.user == request.user:
             review_form.save()
-            messages.add_message(request. messages.SUCCESS, "Error updating review!")
+            messages.add_message(request, messages.SUCCESS, "Review updated successfully!")
         else:
             messages.add_message(request, messages.ERROR, "Error updating comment!")
     # checked condition failed: returnt the original instance
@@ -203,7 +198,7 @@ def review_edit(request, review_id):
         review_form = ReviewForm(instance=review)
 
     # renders review_detail page
-    return HttpResponseRedirect(reverse('review_detail'))
+    return HttpResponseRedirect(reverse('review_detail', args=[review_id]))
 
 
 #return HttpResponseRedirect(reverse('post_detail', args=[review.id]))
@@ -214,7 +209,7 @@ def comment_delete(request, review_id):
     view to delete comment
     """
     
-    review = get_object_or_404(Review, review_id)
+    review = get_object_or_404(Review, id=review_id)
     
 
     if review.user == request.user:
@@ -223,4 +218,4 @@ def comment_delete(request, review_id):
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
-        return HttpResponseRedirect(reverse('review_detail', args=[slug]))
+        return HttpResponseRedirect(reverse('review_detail', args=[review_id]))
