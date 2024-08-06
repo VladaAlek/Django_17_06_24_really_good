@@ -122,6 +122,7 @@ All required function have been incorporated: [Register_Log In](static/images/re
 
  - **Favicon** *not visible* in Firefox: [06/Aug/2024 08:31:59] "GET /4/ HTTP/1.1" 500 352382
 Not Found: /favicon.ico. *Visible* in: Edge and Chrome.
+ - deleted bibliographic unit still visible in the list [Not Deleted](static/images/Disaster_Reseach.png);
 
 ### Testing
 - accessability testing black/red [webaim.org](https://webaim.org/resources/contrastchecker/?fcolor=000000&bcolor=C52B2B "[webaim.org")
@@ -136,7 +137,8 @@ Not Found: /favicon.ico. *Visible* in: Edge and Chrome.
 - HTML
 [Index](static/images/validation%20index%20.png); [About](static/images/validation%20about.png); [Single View](static/images/validation%20single%20view.png); [Registration](static/images/validation%20register.png); [Create Review](static/images/validation%20review%20creation.png);
 
-
+### Further improvement
+ - use slugs (book's key words) instead of object's id to improve the site's ranking in search engines.
 
 Welcome Vladimir Aleksic,
 

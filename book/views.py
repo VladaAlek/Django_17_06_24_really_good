@@ -50,10 +50,13 @@ def about(request):
         )
 
 
+def book_detail(request, bibliography_id):
+    bibliography = get_object_or_404(Bibliography, pk=bibliography_id) 
+    return render(request, "book/review_detail.html", {"bibliography": bibliography},)
 
-
+"""
 def review_detail(request, review_id):
-    """
+   '''
     Display an individual :model:`book.Review`.
 
     **Context**
@@ -70,12 +73,12 @@ def review_detail(request, review_id):
     **Template:**
 
     :template:`book/review_detail.html`
-    """
-
-    queryset = Review.objects.all()
+  
+    '''
+    
     review = get_object_or_404(Review, id=review_id)
     bibliography = review.bibliography
-    reviews = Review.objects.filter(bibliography=review.bibliography).order_by("-created_on")
+    reviews = Review.objects.filter(bibliography=bibliography).order_by("-created_on")
     reviews_count = reviews.count()
     reviews_form = ReviewForm()
 
@@ -84,7 +87,7 @@ def review_detail(request, review_id):
         if review_form.is_valid():
             new_review = review_form.save(commit=False)
             new_review.user = request.user
-            new_review.bibliography = review.bibliography
+            new_review.bibliography = bibliography
             new_review.save()
             messages.add_message(request, messages.SUCCESS, 'Review submitted', extra_tags='review')
             return redirect('review_detail', review_id=review.id)
@@ -112,10 +115,10 @@ def review_detail(request, review_id):
         "reviews_count": reviews_count,
         "reviews_form": reviews_form,
         "review_message": review_message,
-        },
+        }
         
     )
-
+"""
 
 def create_summary(request):
     
@@ -133,8 +136,8 @@ def create_summary(request):
 
     :template:`book/index.html`
 
-    """
     
+      """
 
     if request.method == "POST":
         summary_form = SummaryForm(data=request.Post)
