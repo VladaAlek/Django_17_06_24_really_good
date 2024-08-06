@@ -72,8 +72,9 @@ def review_detail(request, review_id):
     :template:`book/review_detail.html`
     """
 
-    #queryset = Review.objects.all()
+    queryset = Review.objects.all()
     review = get_object_or_404(Review, id=review_id)
+    bibliography = review.bibliography
     reviews = Review.objects.filter(bibliography=review.bibliography).order_by("-created_on")
     reviews_count = reviews.count()
     reviews_form = ReviewForm()
@@ -106,6 +107,7 @@ def review_detail(request, review_id):
         request,
         "book/review_detail.html",
         {"review": review,
+        "bibliography": bibliography,
         "reviews": reviews,
         "reviews_count": reviews_count,
         "reviews_form": reviews_form,
