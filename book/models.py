@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
-# Create your models here.
+
 class Bibliography(models.Model):
     reader = models.ForeignKey(User, on_delete=models.CASCADE, related_name="reader_account", null=True)
     title = models.CharField(max_length=100)

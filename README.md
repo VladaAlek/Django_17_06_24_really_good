@@ -23,6 +23,9 @@ This basic project enables end-users to create, read, update, and delete entries
 
 ![About Page](./static/images/about_page.png)
 
+
+
+
  - a: short textual explanation about the purpose of the project 
  - b: Form section Make it posible for the users to enter and submit bibliographical units in the data base. Further development: "Read", "Update", and "Delete" buttons will be deleted. "Delete" button will become functional. *Superuser* and the *author of the entry* will be able to delete db-elements, which should cause the deletion of all reviews related to this specific entry. "Comment button" will become a direct link to the review section. 
  - c: Capture Further development: The Contact form, similar to one presented in "I think Therefore I Blog," will be replaced to enhance cooperation with the product owner and allow minor corrections of book entries. More attention will be paid to the style of this page.
@@ -55,11 +58,17 @@ All required function have been incorporated: [Register_Log In](static/images/re
 
 #### For returning and frequent users
     a reliable source of the latest literature on the specific topic, a place to communicate with colleagues, find out what the scientific community members think on particular issues, or even their books that became part of this project.
+
 ### Design
+
+## Development
+
+- This is a continuation of the similar project which development was interrupted due to the family cirmustances. 
+[Book Management and Commenting System](https://github.com/VladaAlek/code_institute_django_pp_4 "Book Management and Commenting System"). In its core are these wireframes: 
 
 **Landing Page**
 
-
+![Landing Page](./static/images/landing_page.png)
 
 **Data Management Page**
 ![CRUD Page](./static/images/crud.png)
@@ -76,10 +85,17 @@ All required function have been incorporated: [Register_Log In](static/images/re
 
 
 
-## Model Design nad ERD
-![ERD Book](./static/images/ERD_Book.png)
-![ERD Book](./static/images/ERD_Review.png)
+## Model Design and ERD
 
+#### Bibliography Model
+
+ - initial stage [ERD Bibliography](./static/images/ERD_Book.png)
+ - final stage [ERD Bibliography](static/images/ERD_Bibliography_2.png)
+
+#### Review Model
+
+ - initial stage [ERD Review](./static/images/ERD_Review.png)
+ - final stage [ERD Review](static/images/ERD_Review_2.png)
 
 
 ## Software Used
@@ -94,9 +110,12 @@ All required function have been incorporated: [Register_Log In](static/images/re
  - [StackOverflow](https://stackoverflow.com/questions/33934947/searching-by-username-field-in-django-admin/ "StackOverflow") 
 
 
+
 ## Deployment
 
-- https://www.elephantsql.com/
+- [ElephantSQL](https://www.elephantsql.com/  "ElephantSQL") to store database
+- [Cloudinary](https://cloudinary.com/  "Cloudinary") to store images 
+
 
 
 - 
