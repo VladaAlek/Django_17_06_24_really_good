@@ -9,12 +9,8 @@
     {% for bibliography in bibliographies %}
     <div class="col-md-12">
         <div class="d-flex flex-column flex-md-row align-items-md-center">
-            {% for review in reviews %}
-            {% if review.bibliography == bibliography %}
             <div>
                 <h1 class="post-title">{{ bibliography.title }}</h1>
-                {% for review in reviews %}
-                {% if review.bibliography == bibliography %}
                 <p class="post-subtitle">
                     Author: <strong>{{ bibliography.author }}</strong><br>
                     Created by: <strong>{{ bibliography.user }}</strong><br>
@@ -30,13 +26,12 @@
         </div>
         <hr>
     </div>
+    {% endfor %}
 </div>
 <!-- Display reviews related to this bibliography -->
 <div class="row">
     <div class="col-12">
         <h3>Book's Summary</h3>
-        {% endif %}
-        {% if user.is_authenticated %}
         <p class="card-text p-translucent">
             {{ bibliography.summary | safe }}
         </p>
@@ -84,7 +79,6 @@
             <div class="card-body">
                 <h3>Reviews:</h3>
                 {% for review in reviews %}
-                {% if review.bibliography == bibliography %}
                 <div class="p-2 review {% if review.user == user %}font-weight-bold{% endif %}">
                     <p>
                         {{ review.user }}
@@ -103,13 +97,11 @@
                         {% endif %}
                     </div>
                 </div>
-                {% endif %}
                 {% endfor %}
             </div>
         </div>
     </div>
 </div>
-{% endif %}
 </div>
 <!-- Delete confirmation modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -132,7 +124,6 @@
     </div>
 </div>
 
-    {% endfor %}
 
 {% endblock content %}
 

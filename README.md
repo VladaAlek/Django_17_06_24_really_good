@@ -100,7 +100,7 @@ All required function have been incorporated: [Register_Log In](static/images/re
 
 
 - 
-
+ ##[#20](https://github.com/VladaAlek/Django_17_06_24_really_good/issues/20)
 
 ## Acknowledgments
 
@@ -118,7 +118,10 @@ All required function have been incorporated: [Register_Log In](static/images/re
  - https://https://www.sciencedirect.com/science/article/pii/S2590061724000279
  - https://www.amazon.de/-/en/Dr-Allen-Beattie/dp/B0CLH4J3SZ
  
+### bugs
 
+ - **Favicon** *not visible* in Firefox: [06/Aug/2024 08:31:59] "GET /4/ HTTP/1.1" 500 352382
+Not Found: /favicon.ico. *Visible* in: Edge and Chrome.
 
 ### Testing
 - accessability testing black/red [webaim.org](https://webaim.org/resources/contrastchecker/?fcolor=000000&bcolor=C52B2B "[webaim.org")
