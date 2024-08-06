@@ -38,7 +38,7 @@ This basic project enables end-users to create, read, update, and delete entries
 #### Authentification
 
 All required function have been incorporated: [Register_Log In](static/images/register_login.png); [Log In](static/images/log_in.png); 
-[Loged In](static/images/loged_in.png); [Sign Up](static/images/sign_up.png); [Sign Out](static/images/sign_out.png);
+[Loged In](static/images/loged_in.png); [Sign Up](static/images/sign_up.png); [Sign Out](static/images/sign_out.png); [No Log_No_Review](static/images/unloged_no_comments.png);
 
 
 

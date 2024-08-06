@@ -54,9 +54,9 @@ def book_detail(request, bibliography_id):
     bibliography = get_object_or_404(Bibliography, pk=bibliography_id) 
     return render(request, "book/review_detail.html", {"bibliography": bibliography},)
 
-"""
+
 def review_detail(request, review_id):
-   '''
+    '''
     Display an individual :model:`book.Review`.
 
     **Context**
@@ -118,7 +118,7 @@ def review_detail(request, review_id):
         }
         
     )
-"""
+
 
 def create_summary(request):
     
