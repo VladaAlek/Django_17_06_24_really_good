@@ -82,7 +82,7 @@
             <div class="card-body">
                 <h3>Reviews:</h3>
                 {% for review in reviews %}
-                <div class="p-2 review {% if review.user == user %}font-weight-bold{% endif %}">
+                <div class="p-2 review {% if review.user == user %}font-weight-bold {% endif %}">
                     <p>
                         {{ review.user }}
                         <span class="font-weight-normal">

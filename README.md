@@ -79,7 +79,8 @@ All required functions have been incorporated. They are functional and styled, w
 **Data Management Page**
 ![CRUD Page](./static/images/crud.png)
 
-
+## CRUD Functionality
+ - Create - submitting new bibliographical units [submitting new bibliographical units](./static/images/new_biblio_unit_submitted.png)
 
 ## Technologies Used
  -  *Frontend:* HTML, CSS, JS, Bootstrap
@@ -128,7 +129,7 @@ All required functions have been incorporated. They are functional and styled, w
  - Capture origin [Flickr Account of Christine Warner-Morin](https://www.flickr.com/photos/christinehawks/50353850332/in/photolist-2jHADpj-7kmiGy-2jHEru9-2jFJ9Y7-22P5zJg-of6wu8-NaF2Rd-ojVc2X-2hy4jKb-ayQ9Zd-2a3Fsxe-oY5g6v-4Qan5V-9E5p81-2jeowAb-8cnfe4-8cqAej-4wfLyv-8Y56Fj-2jFBPqN-cWFQTo-pNWvyC-9EkDQJ-vRtXnm-2k5qz8h-2mg9aBL-24PzNWS-jLRWD-7Deny4-8s5SFR-6KqwLt-2mtZSi1-DaQDT9-2kbz98Q-2iF8i2J-2jEWWFC-83hwXC-2nx2aAF-EZDYqS-6KuEas-2np5gAz-28Q8YfN-27aL8kh-cpQk6E-oR5RdZ-xxdRFb-6RTSvw-2jwwdXD-8kCBE2-wPXpbo "Flickr Account of Christine Warner-Morin")
  - "Orange Fire logo" origin [Freepik.com](https://www.freepik.com/free-vector/orange-fire-logo_35202562.htm#query=fire%20burn%20logo&position=29&from_view=keyword&track=ais_user&uuid=fb1e3f8f-07cb-4333-b537-b6ca4ad264fd  "Freepik.com")
 
-- super helpful members of the Student Support Team. Roman, Rebecca, Sarah, Thomas, Oisin, thank you!
+- super helpful members of the Student Support Team. Roman, Rebecca, Sarah, Thomas, Oisin and Alan, **thank you**!
 
 #### list of used book reviews:
  - https://www.preventionweb.net/files/670_72351.pdf
@@ -140,6 +141,8 @@ All required functions have been incorporated. They are functional and styled, w
  - https://www.amazon.com/Disaster-Research-Multidisciplinary-International-Perspectives/dp/1138051616
  - https://https://www.sciencedirect.com/science/article/pii/S2590061724000279
  - https://www.amazon.de/-/en/Dr-Allen-Beattie/dp/B0CLH4J3SZ
+ - https://books.google.de/books/about/El_Ni%C3%B1o_Ready_Nations_and_Disaster_Risk.html?id=O1piEAAAQBAJ&source=kp_book_description&redir_esc=y
+ 
  
 ### bugs
 

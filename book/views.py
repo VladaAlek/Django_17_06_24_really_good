@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from django.http import HttpResponseRedirect
 from django.views import generic
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 from .models import Review, Bibliography
 from .forms import ReviewForm, SummaryForm, BibliographyForm
 
@@ -55,7 +55,7 @@ def book_detail(request, bibliography_id):
     return render(request, "book/review_detail.html", {"bibliography": bibliography},)
 
 
-def review_detail(request, review_id):
+def submit_detail(request, review_id):
     '''
     Display an individual :model:`book.Review`.
 
@@ -76,7 +76,7 @@ def review_detail(request, review_id):
   
     '''
     
-    review = get_object_or_404(Review, id=review_id)
+    review = get_object_or_404(Review, pk=review_id)
     bibliography = review.bibliography
     reviews = Review.objects.filter(bibliography=bibliography).order_by("-created_on")
     reviews_count = reviews.count()
@@ -178,35 +178,27 @@ def create_summary(request):
 
     )
 
-def review_edit(request, review_id):
-    """
-    view to edit reviews 
-    """
 
-    # retrive object from db based on review id
-    review = get_object_or_404(Review, id=review_id)
-
+def review_edit(request, slug, review_id):
+    """
+    view to edit reviews
+    """
     if request.method == "POST":
 
-        # creates an instance of 'ReviewForm' with the sumbitted data
+        #queryset = Bibliography.objects(all)
+        #bibliography = get_object_or_404(queryset, pk=review_id)
+        review = get_object_or_404(Review, id=review_id, slug=slug)
         review_form = ReviewForm(data=request.POST, instance=review)
 
-            
-        # check condition: user is the author of the review, user is loged in
         if review_form.is_valid() and review.user == request.user:
-            review_form.save()
-            messages.add_message(request, messages.SUCCESS, "Review updated successfully!")
+            review = review_form.save(commit=False)
+            review.bibliography = post
+            review.save()
+            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:
-            messages.add_message(request, messages.ERROR, "Error updating comment!")
-    # checked condition failed: returnt the original instance
-    else:
-        review_form = ReviewForm(instance=review)
+            messages.add_message(request, messages.ERROR, 'Error updating comment!')
 
-    # renders review_detail page
     return HttpResponseRedirect(reverse('review_detail', args=[review_id]))
-
-
-#return HttpResponseRedirect(reverse('post_detail', args=[review.id]))
 
 
 def comment_delete(request, review_id):
