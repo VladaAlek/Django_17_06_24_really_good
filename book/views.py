@@ -3,7 +3,7 @@ from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Review, Bibliography
-from .forms import ReviewForm, SummaryForm, BibliographyForm
+from .forms import ReviewForm, SummaryForm, BibliographyForm, SubmitForm
 
 # Create your views here.
 
@@ -51,11 +51,6 @@ def about(request):
 
 
 def book_detail(request, bibliography_id):
-    bibliography = get_object_or_404(Bibliography, pk=bibliography_id) 
-    return render(request, "book/review_detail.html", {"bibliography": bibliography},)
-
-
-def submit_detail(request, review_id):
     '''
     Display an individual :model:`book.Review`.
 
@@ -76,11 +71,10 @@ def submit_detail(request, review_id):
   
     '''
     
-    review = get_object_or_404(Review, pk=review_id)
-    bibliography = review.bibliography
+    bibliography = get_object_or_404(Bibliography, pk=bibliography_id)
     reviews = Review.objects.filter(bibliography=bibliography).order_by("-created_on")
     reviews_count = reviews.count()
-    reviews_form = ReviewForm()
+    submit_form = SubmitForm()
 
     if request.method == "POST":
         review_form = ReviewForm(data=request.POST)
@@ -90,7 +84,7 @@ def submit_detail(request, review_id):
             new_review.bibliography = bibliography
             new_review.save()
             messages.add_message(request, messages.SUCCESS, 'Review submitted', extra_tags='review')
-            return redirect('review_detail', review_id=review.id)
+            return redirect('book_detail', bibliography_id=bibliography_id)
     else:
         review_form = ReviewForm()
 
@@ -109,11 +103,11 @@ def submit_detail(request, review_id):
     return render(
         request,
         "book/review_detail.html",
-        {"review": review,
+        {#"review": review,
         "bibliography": bibliography,
         "reviews": reviews,
         "reviews_count": reviews_count,
-        "reviews_form": reviews_form,
+        "review_form": review_form,
         "review_message": review_message,
         }
         
