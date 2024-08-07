@@ -3,7 +3,7 @@ from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Review, Bibliography
-from .forms import ReviewForm, SummaryForm, BibliographyForm, SubmitForm
+from .forms import ReviewForm, SummaryForm, BibliographyForm
 
 # Create your views here.
 
@@ -74,7 +74,7 @@ def book_detail(request, bibliography_id):
     bibliography = get_object_or_404(Bibliography, pk=bibliography_id)
     reviews = Review.objects.filter(bibliography=bibliography).order_by("-created_on")
     reviews_count = reviews.count()
-    submit_form = SubmitForm()
+    review_form = ReviewForm()
 
     if request.method == "POST":
         review_form = ReviewForm(data=request.POST)
