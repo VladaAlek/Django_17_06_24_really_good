@@ -6,9 +6,23 @@
 This essential project enables end-users to create, read, update, and delete entries for book titles on specific topics, thereby establishing a unique database. The "review" option is an added important feature, allowing readers to engage in discussions and share their thoughts.
 
 
+## Users Benefits and Goals
+
+- Product Owner 
+    the webssite establishes a powerful tool for knowledge dissemination, networking activities, sharing and acquiring cutting-edge ideas on specific topics
+
+- Final User
+    
+#### A) For the first-time user
+ - dynamic digital platform to contribute to and navigate through the content of book entries 
+
+#### For returning and frequent users
+
+- a reliable source of the latest literature on the specific topic, a place to communicate with colleagues, learn what the scientific community members think on particular issues, or even their books that became part of this project.
+
 ## User Experience (UX) Section
 
-### main features and structure  
+### Main Features and Structure  
 
  **Home Page**
 
@@ -30,6 +44,8 @@ This essential project enables end-users to create, read, update, and delete ent
  - b: The form section allows users to enter and submit bibliographical units in the database. Further development: The "Read" and"Update" buttons will be deleted. The "Delete" button will become functional. *Superuser* and the *author of the entry* will be able to delete db-elements, which should cause the deletion of all reviews related to this specific entry. The "Comment" button will be renamed to the "Review" button, becoming a direct link to the review section.  
  - c: Capture featuring a forest fire - Further development: The Contact form, similar to one presented in "I think Therefore I Blog," will be introduced instad of the existing capture to enhance cooperation with the product owner and allow minor corrections of book entries. More attention will be paid to the style of this page.
 
+### Additional Features
+
 #### Navigation
  - *Home page* 1: by clicking on DRU Bibliography in navbar 2: Home link in navbar 3: 
  - *List of book navigation* - Next and Prev button introduced [next Only](static/images/next_only.png); [Prev Next](static/images/prev_next.png); 
@@ -44,20 +60,10 @@ All required functions have been incorporated. They are functional and styled, w
 [Register_Log In](static/images/register_login.png); [Log In](static/images/log_in.png); [Loged In](static/images/loged_in.png); [Sign Up](static/images/sign_up.png); 
 [Sign Out](static/images/sign_out.png); [No Log_No_Review](static/images/unloged_no_comments.png);
 
+#### Displaying Static and User-Generated Images
 
-## Users Benefits and Goals
+- please, check *"At Risk: Natural Hazards, People's Vulnerability and Disasters"* detail view: [User-Generated Images](static/images/featured_image.png);
 
-- Product Owner 
-    the webssite establishes a powerful tool for knowledge dissemination, networking activities, sharing and acquiring cutting-edge ideas on specific topics
-
-- Final User
-    
-#### A) For the first-time user
- - dynamic digital platform to contribute to and navigate through the content of book entries 
-
-#### For returning and frequent users
-
-- a reliable source of the latest literature on the specific topic, a place to communicate with colleagues, learn what the scientific community members think on particular issues, or even their books that became part of this project.
 
 ## Design and Development
 

@@ -20,12 +20,10 @@
             </div>
 
             <div class="d-none d-md-block col-md-4 col-lg-3 ms-md-4">
-                <!--<img src="{% static 'images/featured_image.jpg' %}" class="img-fluid"
-                    alt="logo in the shape of orange fire"> -->
                 {% if "placeholder" in bibliography.featured_image.url %}
-                <img class="card-img-top" src="{% static 'images/featured_image.jpg' %}" alt="placeholder image">
+                <img class="card-img-top" src="{% static 'images/default_image.jpg' %}" class="scale" alt="placeholder image">
                 {% else %}
-                <img class="card-img-top" src=" {{ bibliography.featured_image.url }}" alt="{{ bibliography.title }}">
+                <img class="card-img-top" src=" {{ bibliography.featured_image.url }}" class="scale" alt="{{ bibliography.title }}">
                 {% endif %}
             </div>
 
