@@ -31,12 +31,12 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['8000-vladaalek-django170624r-v5jh3fd2oy3.ws.codeinstitute-ide.net',
 '.herokuapp.com']
 
 
-# Application definitiongit a
+# Application definiti on a git 
 
 INSTALLED_APPS = [
     'crispy_forms',
@@ -98,16 +98,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'librarychat.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#   }
-#}
 
 
 DATABASES = {

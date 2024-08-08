@@ -172,6 +172,8 @@ Not Found: /favicon.ico. *Visible* in: Edge and Chrome.
 [CSS Index](static/images/CSS_index.png); [CSS About](static/images/CSS_about.png); [CSS Single View](static/images/CSS%20single%20view.png);
 - HTML
 [Index](static/images/validation%20index%20.png); [About](static/images/validation%20about.png); [Single View](static/images/validation%20single%20view.png); [Registration](static/images/validation%20register.png); [Create Review](static/images/validation%20review%20creation.png);
+- JavaScript JSLint doesn't support all ESJ features, hence minor error reports [Jslint](static/images/jslint.png). When possible, the raised issues addressed - too long text in the comments;
+- Python [Pythonium](https://pythonium.net/linter)
 
 ### Further improvement
  - use slugs (book's key-words) instead of object's id to improve the site's ranking in search engines.

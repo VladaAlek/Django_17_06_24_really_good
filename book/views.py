@@ -5,7 +5,6 @@ from django.http import HttpResponseRedirect
 from .models import Review, Bibliography
 from .forms import ReviewForm, BibliographyForm, DeleteForm
 
-# Create your views here.
 
 # Class-based views
 
@@ -13,7 +12,6 @@ class ReviewList(generic.ListView):
     queryset = Bibliography.objects.all()
     template_name = "book/index.html"
     paginate_by = 6
-
 
 
 # Function-based views
@@ -72,12 +70,9 @@ def book_detail(request, bibliography_id):
     shows single bibliography view and all related reviews
 
     '''
-    #queryset = Bibliography.object(all)
+    
     bibliography = get_object_or_404(Bibliography, pk=bibliography_id)
-    #comments = post.comments.all().order_by("-created_on")
     reviews = bibliography.reviews.all().order_by("-created_on")
-    #reviews = Review.objects.filter(bibliography=bibliography).order_by("-created_on")
-    #comment_count = post.comments.filter(approved=True).count()
     reviews_count = bibliography.reviews.count()
     review_form = ReviewForm()
 
@@ -85,7 +80,6 @@ def book_detail(request, bibliography_id):
         review_form = ReviewForm(data=request.POST)
         if review_form.is_valid():
             review = review_form.save(commit=False)
-            #comment = comment_form.save(commit=False)
             review.user = request.user
             review.bibliography = bibliography
             review.save()
@@ -109,11 +103,10 @@ def book_detail(request, bibliography_id):
     return render(
         request,
         "book/review_detail.html",
-        {#"review": review,
+        {
         "bibliography": bibliography,
         "reviews": reviews,
         "reviews_count": reviews_count,
-        #"review_form": review_form, consider if you have to give back this line of code
         "review_message": review_message,
         }
         
@@ -186,7 +179,7 @@ def review_edit(request, slug, review_id):
     """
     if request.method == "POST":
 
-        queryset = Bibliography.objects.all() #original code queryset = Post.objects.filter(status=1)
+        queryset = Bibliography.objects.all() 
         bibliography = get_object_or_404(queryset, slug=slug)
         review = get_object_or_404(Review, pk=review_id)
         review_form = ReviewForm(data=request.POST, instance=review)

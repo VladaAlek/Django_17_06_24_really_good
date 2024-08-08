@@ -124,32 +124,16 @@
         </div>
         {% endif %}
         {% endfor %}
-
-        <!-- Review_Detail submitted messages 
-        {% for message in messages %}
-        {% if 'review' in message.tags %}
-        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-          {{ message | safe }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        {% endif %}
-        {% endfor %}-->
-
       </div>
     </div>
   </div>
-        <!-- Review_Detail messages -->
-        <!-- add delete -->
-
   <main class="flex-shrink-0 main-bg">
     {% if user.is_authenticated %}
     <p class="text-end m-3 ps-3">You are logged in as {{ user }}</p>
     {% else %}
-    <p class="text-end m-3"><span class="not-authent-massage">You are not logged in</span></p>
-    <!--delete span if CSS doesnt work ?-->
+    <p class="text-end m-3">You are not logged in</p>
     {% endif %}
     {% block content %}
-    <!-- Content Goes here -->
     {% endblock content %}
   </main>
 

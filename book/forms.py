@@ -24,7 +24,6 @@ class BibliographyForm(forms.ModelForm):
             'summary': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Enter summary here...', 'rows': 5}),
         }
 
-#ReviewForm, SummaryForm, BibliographyForm
 
 '''
 class SummaryForm(forms.ModelForm):
