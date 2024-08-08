@@ -14,6 +14,7 @@ class Bibliography(models.Model):
     summary = models.TextField(blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     featured_image = CloudinaryField('image', default='placeholder', blank=True, null=True)
+    slug = models.SlugField(unique=True, blank=True, null=True)
 
 
     

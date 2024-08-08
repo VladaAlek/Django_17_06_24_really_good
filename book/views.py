@@ -51,6 +51,7 @@ def about(request):
 
 
 def book_detail(request, bibliography_id):
+    
     '''
     Display an individual :model:`book.Review`.
 
@@ -68,7 +69,7 @@ def book_detail(request, bibliography_id):
     **Template:**
 
     :template:`book/review_detail.html`
-  
+
     '''
     
     bibliography = get_object_or_404(Bibliography, pk=bibliography_id)
@@ -112,6 +113,7 @@ def book_detail(request, bibliography_id):
         }
         
     )
+
 
 
 def create_summary(request):
