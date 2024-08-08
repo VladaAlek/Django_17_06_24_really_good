@@ -83,7 +83,7 @@ All required functions have been incorporated. They are functional and styled, w
  - Create - submitting new bibliographical units [submitting new bibliographical units](./static/images/new_biblio_unit_submitted.png)
  - Read - user can see not only the list of books, but each individual book 
  - Update - user can update individual reviews
- - Delete - user can delete individual reviews
+ - Delete - user can delete individual reviews. *Delete confirmation modal* is operational: [Delete confirmation modal](./static/images/Delete%20confirmation%20modal.png)
 
 ## Technologies Used
  -  *Frontend:* HTML, CSS, JS, Bootstrap

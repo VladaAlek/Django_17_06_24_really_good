@@ -204,7 +204,7 @@ def review_edit(request, slug, review_id):
 
 def review_delete(request, slug, review_id):
     """
-    view to delete comment
+    view to delete review
     """
     
     queryset = Bibliography.objects.all()
@@ -218,4 +218,4 @@ def review_delete(request, slug, review_id):
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
-        return HttpResponseRedirect(reverse('review_detail', args=[review_id, slug]))
+        return HttpResponseRedirect(reverse('review_detail', args=[slug]))
