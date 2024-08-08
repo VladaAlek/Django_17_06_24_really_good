@@ -6,6 +6,9 @@
 This essential project enables end-users to create, read, update, and delete entries for book titles on specific topics, thereby establishing a unique database. The "review" option is an added important feature, allowing readers to engage in discussions and share their thoughts.
 
 
+![Landing Page](./static/images/responsive%20design.png)
+
+
 ## Users Benefits and Goals
 
 - Product Owner 
@@ -108,6 +111,10 @@ All required functions have been incorporated. They are functional and styled, w
 
 ## Software Used
 
+- [Multi-mockup-generator](https://techsini.com/multi-mockup/index.php "Multi-mockup-generator") to create the mockup for responsive pages.
+
+## External Code Source
+
 - navbar in base.html, inspiration from: [Shaun (Net Ninja)](https://github.com/iamshaunjp/bootstrap-5-tutorial/blob/lesson-9/index.html "Shaun (Net Ninja)")
 - responsive design in index.html and about.html, inspiration from: [Shaun (Net Ninja)](https://github.com/iamshaunjp/bootstrap-5-tutorial/blob/lesson-7/index.html "Shaun (Net Ninja)")
 
@@ -152,6 +159,8 @@ All required functions have been incorporated. They are functional and styled, w
  - **Favicon** *not visible* in Firefox: [06/Aug/2024 08:31:59] "GET /4/ HTTP/1.1" 500 352382
 Not Found: /favicon.ico. *Visible* in: Edge and Chrome.
  - deleted bibliographic unit still visible in the list [Not Deleted](static/images/Disaster_Reseach.png);
+ - Server Error 500 when attempting to open single book view [Server Error 500](static/images/external%20server%20error.png); 
+ The possible cause of problem was detected, but the issue was left unaddressed due to the time scarcity: [stackoverflow](https://stackoverflow.com/questions/46021463/heroku-giving-500-error-with-little-information-internal-server-error  "stackoverflow")
 
 ### Testing
 

@@ -25,7 +25,7 @@ def about(request):
             new_summary = summary_form.save(commit=False)
             new_summary.reader = request.user
             new_summary.save()
-            messages.success(request, "New bibliographical entry submitted", extra_tags="about")
+            c
             return redirect("about")
     else:
         summary_form = BibliographyForm()
@@ -195,7 +195,7 @@ def review_edit(request, slug, review_id):
             review = review_form.save(commit=False)
             review.bibliography = bibliography
             review.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+            messages.add_message(request, messages.SUCCESS, 'Comment Updated!', extra_tags='edit')
         else:
             messages.add_message(request, messages.ERROR, 'Error updating comment!')
 
@@ -214,7 +214,7 @@ def review_delete(request, slug, review_id):
 
     if review.user == request.user:
         review.delete()
-        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
+        messages.add_message(request, messages.SUCCESS, 'Comment deleted!', extra_tags='delete')
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
