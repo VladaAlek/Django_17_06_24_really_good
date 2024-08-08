@@ -25,12 +25,7 @@ class BibliographyForm(forms.ModelForm):
         }
 
 
-'''
-class SummaryForm(forms.ModelForm):
-    class Meta:
-       model = Bibliography
-       fields = ('summary',)
-'''
+
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
