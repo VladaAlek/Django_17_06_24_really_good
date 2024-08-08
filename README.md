@@ -85,7 +85,10 @@ All required functions have been incorporated. They are functional and styled, w
 ## CRUD Functionality
  - Create - submitting new bibliographical units [submitting new bibliographical units](./static/images/new_biblio_unit_submitted.png)
  - Read - user can see not only the list of books, but each individual book 
- - Update - user can update individual reviews
+ - Update - user can update individual reviews. For this and Delete points, the explanation is attached:  
+ [Delete and Edit Bugs 1](./static/images/list%20of%20noticed%20bugs_page1.jpg); 
+ [Delete and Edit Bugs 2](./static/images/list%20of%20noticed%20bugs_page2.jpg);  
+ [Delete and Edit Bugs 3](./static/images/list%20of%20noticed%20bugs_page3.jpg); 
  - Delete - user can delete individual reviews. *Delete confirmation modal* is operational: [Delete confirmation modal](./static/images/Delete%20confirmation%20modal.png)
 
 ## Technologies Used
@@ -132,8 +135,6 @@ All required functions have been incorporated. They are functional and styled, w
 - [Cloudinary](https://cloudinary.com/  "Cloudinary") to store images 
 
 
-
-
 ## Acknowledgments
 
  - Capture origin [Flickr Account of Christine Warner-Morin](https://www.flickr.com/photos/christinehawks/50353850332/in/photolist-2jHADpj-7kmiGy-2jHEru9-2jFJ9Y7-22P5zJg-of6wu8-NaF2Rd-ojVc2X-2hy4jKb-ayQ9Zd-2a3Fsxe-oY5g6v-4Qan5V-9E5p81-2jeowAb-8cnfe4-8cqAej-4wfLyv-8Y56Fj-2jFBPqN-cWFQTo-pNWvyC-9EkDQJ-vRtXnm-2k5qz8h-2mg9aBL-24PzNWS-jLRWD-7Deny4-8s5SFR-6KqwLt-2mtZSi1-DaQDT9-2kbz98Q-2iF8i2J-2jEWWFC-83hwXC-2nx2aAF-EZDYqS-6KuEas-2np5gAz-28Q8YfN-27aL8kh-cpQk6E-oR5RdZ-xxdRFb-6RTSvw-2jwwdXD-8kCBE2-wPXpbo "Flickr Account of Christine Warner-Morin")
@@ -154,13 +155,15 @@ All required functions have been incorporated. They are functional and styled, w
  - https://books.google.de/books/about/El_Ni%C3%B1o_Ready_Nations_and_Disaster_Risk.html?id=O1piEAAAQBAJ&source=kp_book_description&redir_esc=y
  
  
-### bugs
+### Bugs
 
  - **Favicon** *not visible* in Firefox: [06/Aug/2024 08:31:59] "GET /4/ HTTP/1.1" 500 352382
 Not Found: /favicon.ico. *Visible* in: Edge and Chrome.
  - deleted bibliographic unit still visible in the list [Not Deleted](static/images/Disaster_Reseach.png);
  - Server Error 500 when attempting to open single book view [Server Error 500](static/images/external%20server%20error.png); 
- The possible cause of problem was detected, but the issue was left unaddressed due to the time scarcity: [stackoverflow](https://stackoverflow.com/questions/46021463/heroku-giving-500-error-with-little-information-internal-server-error  "stackoverflow")
+ The possible cause of problem was detected, but the issue was left unaddressed due to the time scarcity - this problem appeared only a few days before the submission:
+ [stackoverflow](https://stackoverflow.com/questions/46021463/heroku-giving-500-error-with-little-information-internal-server-error  "stackoverflow")
+ - Please, see the CRUD Functionality section of this document.
 
 ### Testing
 
