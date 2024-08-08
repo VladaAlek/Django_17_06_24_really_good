@@ -1,9 +1,9 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Review, Bibliography
-from .forms import ReviewForm, SummaryForm, BibliographyForm
+from .forms import ReviewForm, SummaryForm, BibliographyForm, DeleteForm
 
 # Create your views here.
 
@@ -53,12 +53,12 @@ def about(request):
 def book_detail(request, bibliography_id):
     
     '''
-    Display an individual :model:`book.Review`.
+    Display an individual :model:`book.Bibliography`.
 
     **Context**
 
-    ``review``
-        An instance of :model:`book.Review`.
+    ``bibliography``
+        An instance of :model:`book.Bibliography`.
 
     ``reviews``
         all reviews related to the same bibliography`.
@@ -69,21 +69,26 @@ def book_detail(request, bibliography_id):
     **Template:**
 
     :template:`book/review_detail.html`
+    shows single bibliography view and all related reviews
 
     '''
-    
+    #queryset = Bibliography.object(all)
     bibliography = get_object_or_404(Bibliography, pk=bibliography_id)
-    reviews = Review.objects.filter(bibliography=bibliography).order_by("-created_on")
-    reviews_count = reviews.count()
+    #comments = post.comments.all().order_by("-created_on")
+    reviews = bibliography.reviews.all().order_by("-created_on")
+    #reviews = Review.objects.filter(bibliography=bibliography).order_by("-created_on")
+    #comment_count = post.comments.filter(approved=True).count()
+    reviews_count = bibliography.reviews.count()
     review_form = ReviewForm()
 
     if request.method == "POST":
         review_form = ReviewForm(data=request.POST)
         if review_form.is_valid():
-            new_review = review_form.save(commit=False)
-            new_review.user = request.user
-            new_review.bibliography = bibliography
-            new_review.save()
+            review = review_form.save(commit=False)
+            #comment = comment_form.save(commit=False)
+            review.user = request.user
+            review.bibliography = bibliography
+            review.save()
             messages.add_message(request, messages.SUCCESS, 'Review submitted', extra_tags='review')
             return redirect('book_detail', bibliography_id=bibliography_id)
     else:
@@ -108,7 +113,7 @@ def book_detail(request, bibliography_id):
         "bibliography": bibliography,
         "reviews": reviews,
         "reviews_count": reviews_count,
-        "review_form": review_form,
+        #"review_form": review_form, consider if you have to give back this line of code
         "review_message": review_message,
         }
         
@@ -181,28 +186,30 @@ def review_edit(request, slug, review_id):
     """
     if request.method == "POST":
 
-        #queryset = Bibliography.objects(all)
-        #bibliography = get_object_or_404(queryset, pk=review_id)
-        review = get_object_or_404(Review, id=review_id, slug=slug)
+        queryset = Bibliography.objects.all() #original code queryset = Post.objects.filter(status=1)
+        bibliography = get_object_or_404(queryset, slug=slug)
+        review = get_object_or_404(Review, pk=review_id)
         review_form = ReviewForm(data=request.POST, instance=review)
 
         if review_form.is_valid() and review.user == request.user:
             review = review_form.save(commit=False)
-            review.bibliography = post
+            review.bibliography = bibliography
             review.save()
             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:
             messages.add_message(request, messages.ERROR, 'Error updating comment!')
 
-    return HttpResponseRedirect(reverse('review_detail', args=[review_id]))
+    return HttpResponseRedirect(reverse('review_detail', args=[slug, review_id]))
 
 
-def comment_delete(request, review_id):
+def review_delete(request, slug, review_id):
     """
     view to delete comment
     """
     
-    review = get_object_or_404(Review, id=review_id)
+    queryset = Bibliography.objects.all()
+    bibliography = get_object_or_404(queryset, slug=slug)
+    review = get_object_or_404(Review, pk=review_id)
     
 
     if review.user == request.user:
@@ -211,4 +218,4 @@ def comment_delete(request, review_id):
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
-        return HttpResponseRedirect(reverse('review_detail', args=[review_id]))
+        return HttpResponseRedirect(reverse('review_detail', args=[review_id, slug]))

@@ -21,8 +21,7 @@ class BibliographyForm(forms.ModelForm):
             'summary': 'Summary',
         }
 
-
-
+#ReviewForm, SummaryForm, BibliographyForm
 
 class SummaryForm(forms.ModelForm):
     class Meta:

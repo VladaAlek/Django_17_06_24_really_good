@@ -81,6 +81,9 @@ All required functions have been incorporated. They are functional and styled, w
 
 ## CRUD Functionality
  - Create - submitting new bibliographical units [submitting new bibliographical units](./static/images/new_biblio_unit_submitted.png)
+ - Read - user can see not only the list of books, but each individual book 
+ - Update - user can update individual reviews
+ - Delete - user can delete individual reviews
 
 ## Technologies Used
  -  *Frontend:* HTML, CSS, JS, Bootstrap
