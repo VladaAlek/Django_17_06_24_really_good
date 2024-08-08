@@ -3,7 +3,7 @@ from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Review, Bibliography
-from .forms import ReviewForm, SummaryForm, BibliographyForm, DeleteForm
+from .forms import ReviewForm, BibliographyForm, DeleteForm
 
 # Create your views here.
 

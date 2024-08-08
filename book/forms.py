@@ -20,14 +20,18 @@ class BibliographyForm(forms.ModelForm):
             'edition': 'Edition (Optional)',
             'summary': 'Summary',
         }
+        widgets = {
+            'summary': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Enter summary here...', 'rows': 5}),
+        }
 
 #ReviewForm, SummaryForm, BibliographyForm
 
+'''
 class SummaryForm(forms.ModelForm):
     class Meta:
        model = Bibliography
        fields = ('summary',)
-
+'''
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review

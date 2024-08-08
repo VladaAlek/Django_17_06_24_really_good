@@ -58,7 +58,7 @@ This essential project enables end-users to create, read, update, and delete ent
 
 All required functions have been incorporated. They are functional and styled, when possible, to improve the UX: 
 [Register_Log In](static/images/register_login.png); [Log In](static/images/log_in.png); [Loged In](static/images/loged_in.png); [Sign Up](static/images/sign_up.png); 
-[Sign Out](static/images/sign_out.png); [No Log_No_Review](static/images/unloged_no_comments.png);
+[Sign Out](static/images/sign_out.png); [No_Log_No_Review](static/images/unloged_no_comments.png);
 
 #### Displaying Static and User-Generated Images
 
