@@ -85,9 +85,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
-        <!-- Review messages "comment updated"-->
+        <!-- About messages bibliography submitted -->
         {% for message in messages %}
-        {% if 'review' in message.tags %}
+        {% if 'about' in message.tags %}
         <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
           {{ message | safe }}
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -95,9 +95,9 @@
         {% endif %}
         {% endfor %}
 
-        <!-- About messages bibliography submitted -->
+        <!-- Review messages "comment updated"-->
         {% for message in messages %}
-        {% if 'about' in message.tags %}
+        {% if 'review' in message.tags %}
         <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
           {{ message | safe }}
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

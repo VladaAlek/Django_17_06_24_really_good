@@ -23,12 +23,11 @@ def about(request):
             new_summary = summary_form.save(commit=False)
             new_summary.reader = request.user
             new_summary.save()
-            c
+            messages.add_message(request, messages.SUCCESS, 'Summary saved successfully', extra_tags='about')
             return redirect("about")
     else:
         summary_form = BibliographyForm()
-
-
+    
     # Filter messages to pass only one 'about' message
 
     about_message = None
