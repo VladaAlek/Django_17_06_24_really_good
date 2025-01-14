@@ -135,8 +135,10 @@ All required functions have been incorporated. They are functional and styled, w
 ## Deployment
 
 - [ElephantSQL](https://www.elephantsql.com/  "ElephantSQL") to store database
-- [Cloudinary](https://cloudinary.com/  "Cloudinary") to store images 
-
+- [Cloudinary](https://cloudinary.com/  "Cloudinary") to store images
+- [Heroky](https://dashboard.heroku.com/  "Heroku") to deploy the project
+- [Github](https://github.com/  "Github") for recording coding history
+- [Github Brunches](https://github.com/VladaAlek/Django_17_06_24_really_good/branches  "Github Brunches") - important, because it contains all Projects.
 
 
 ### Testing
