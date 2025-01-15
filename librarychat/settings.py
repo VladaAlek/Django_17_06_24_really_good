@@ -33,8 +33,15 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+
 ALLOWED_HOSTS = ['8000-vladaalek-django170624r-p3a7lry6k7z.ws-eu117.gitpod.io',
 '.herokuapp.com']
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://8000-vladaalek-django170624r-p3a7lry6k7z.ws-eu117.gitpod.io",
+    "https://vladimir-django-pp4-909a898b5b2a.herokuapp.com"
+]
 
 
 # Application definiti on a git 
@@ -110,10 +117,6 @@ if 'test' in sys.argv:
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://8000-vladaalek-django170624r-v5jh3fd2oy3.ws.codeinstitute-ide.net",
-    "https://vladimir-django-pp4-909a898b5b2a.herokuapp.com"
-]
 
 
 # Password validation
