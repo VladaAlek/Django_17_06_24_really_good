@@ -172,17 +172,16 @@ def create_summary(request):
     )
 
 
-def review_edit(request, slug, review_id):
+def review_edit(request, bibliography_id, review_id):
     """
-    view to edit reviews
+    View to edit reviews
     """
+    queryset = Bibliography.objects.all()
+    bibliography = get_object_or_404(queryset, pk=bibliography_id)
+    review = get_object_or_404(Review, pk=review_id)
+
     if request.method == "POST":
-
-        queryset = Bibliography.objects.all() 
-        bibliography = get_object_or_404(queryset, slug=slug)
-        review = get_object_or_404(Review, pk=review_id)
         review_form = ReviewForm(data=request.POST, instance=review)
-
         if review_form.is_valid() and review.user == request.user:
             review = review_form.save(commit=False)
             review.bibliography = bibliography
@@ -190,24 +189,28 @@ def review_edit(request, slug, review_id):
             messages.add_message(request, messages.SUCCESS, 'Comment Updated!', extra_tags='edit')
         else:
             messages.add_message(request, messages.ERROR, 'Error updating comment!')
+        return HttpResponseRedirect(reverse('review_edit', args=[bibliography_id, review_id]))
+    else:
+        review_form = ReviewForm(instance=review)
+        return render(request, 'review_detail.html', {'review_form': review_form, 'bibliography': bibliography})
 
-    return HttpResponseRedirect(reverse('review_detail', args=[slug, review_id]))
 
 
-def review_delete(request, slug, review_id):
+def review_delete(request, bibliography_id, review_id):
     """
     view to delete review
     """
     
     queryset = Bibliography.objects.all()
-    bibliography = get_object_or_404(queryset, slug=slug)
+    bibliography = get_object_or_404(queryset, pk=bibliography_id)
     review = get_object_or_404(Review, pk=review_id)
     
 
     if review.user == request.user:
         review.delete()
         messages.add_message(request, messages.SUCCESS, 'Comment deleted!', extra_tags='delete')
+        return HttpResponseRedirect(reverse('review_detail', args=[bibliography_id, review_id]))
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
-        return HttpResponseRedirect(reverse('review_detail', args=[slug]))
+        return HttpResponseRedirect(reverse('review_detail', args=[bibliography_id, review_id]))

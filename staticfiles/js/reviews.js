@@ -41,7 +41,7 @@ for (let button of editButtons) {
 */
 for (let button of deleteButtons) {
     button.addEventListener("click", (e) => {
-      let reviewId = e.target.getAttribute("review_id");
+      let reviewId = e.target.getAttribute("comment_id");
       deleteConfirm.href = `delete_review/${reviewId}`;
       deleteModal.show();
     });
