@@ -192,7 +192,7 @@ def review_edit(request, bibliography_id, review_id):
         return HttpResponseRedirect(reverse('review_edit', args=[bibliography_id, review_id]))
     else:
         review_form = ReviewForm(instance=review)
-        return render(request, 'review_detail.html', {'review_form': review_form, 'bibliography': bibliography})
+        return render(request, 'book/review_detail.html', {'review_form': review_form, 'bibliography': bibliography})
 
 
 
@@ -213,4 +213,4 @@ def review_delete(request, bibliography_id, review_id):
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
-        return HttpResponseRedirect(reverse('review_detail', args=[bibliography_id, review_id]))
+        return HttpResponseRedirect(reverse('book/review_detail', args=[bibliography_id, review_id]))
