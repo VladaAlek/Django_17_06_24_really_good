@@ -96,8 +96,8 @@
                     </div>
                     <div class="edit-wrapper d-flex justify-content-center">
                         {% if user.is_authenticated and review.user == user %}
-                        <button class="btn btn-edit" review_id="{{review.id}}" href="{% url 'review_edit' bibliography.id review.id %}">Edit</button>
-                        <button class="btn btn-delete" comment_id="{{ review.id }}">Delete</button>
+                        <button class="btn btn-edit" review_id="{{review.id}}">Edit</button>
+                        <button class="btn btn-delete" review_id="{{ review.id }}">Delete</button>
                         {% endif %}
                     </div>
                 </div>
