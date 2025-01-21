@@ -137,7 +137,9 @@ All required functions have been incorporated. They are functional and styled, w
 - [ElephantSQL](https://www.elephantsql.com/  "ElephantSQL") to store database
 - [Cloudinary](https://cloudinary.com/  "Cloudinary") to store images added by users
 - [Heroky](https://dashboard.heroku.com/  "Heroku") to deploy the project
-- [Github](https://github.com/  "Github") for recording coding history
+- [Github](https://github.com/  "Github") for recording coding history. Unfortunately, the [wrong repo](static/images/milestone%20and%20projects%20open%20in%20the%20wrong%20repo.png) is used to create the first milestone and project. The link to this milestone, [here](https://github.com/users/VladaAlek/projects/24/views/1 "link to the repo")
+ 
+
 - [Github Brunches](https://github.com/VladaAlek/Django_17_06_24_really_good/branches  "Github Brunches") - important, because it contains all Projects.
 
 
@@ -164,15 +166,19 @@ All required functions have been incorporated. They are functional and styled, w
 - testing black/red [webaim.org](https://webaim.org/resources/contrastchecker/?fcolor=000000&bcolor=C52B2B "[webaim.org")
 - testing white/red [webaim.org](https://webaim.org/resources/contrastchecker/?fcolor=FFFFFF&bcolor=C52B2B "[webaim.org")
 
-### Bugs
+### List of major Bugs
+
+#### Resolved
+- 
+
+#### Unresolved
+
+ - updated review keeps the original creation datum unchanged [creation datum unchanged](static/images/updated%20review%20original%20datum%20unchanged.png);
 
  - **Favicon** *not visible* in Firefox: [06/Aug/2024 08:31:59] "GET /4/ HTTP/1.1" 500 352382
 Not Found: /favicon.ico. *Visible* in Edge and Chrome.
  - deleted bibliographic unit still visible in the list [Not Deleted](static/images/Disaster_Reseach.png);
- - Server Error 500 when attempting to open single book view [Server Error 500](static/images/external%20server%20error.png); 
- The possible cause of the problem was detected. Still, the issue was left unaddressed due to the time scarcity. This problem appeared only a few days before the submission:
- [stackoverflow](https://stackoverflow.com/questions/46021463/heroku-giving-500-error-with-little-information-internal-server-error  "stackoverflow")
- - Please, see the CRUD Functionality section of this document.
+ 
 
 ### Further improvement
  - use slugs (book's keywords) instead of the object's id to improve the site's ranking in search engines.

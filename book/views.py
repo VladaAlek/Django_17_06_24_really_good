@@ -209,9 +209,8 @@ def review_delete(request, bibliography_id, review_id):
 
     if review.user == request.user:
         review.delete()
-        messages.add_message(request, messages.SUCCESS, 'Comment deleted!', extra_tags='delete')
-        return HttpResponseRedirect(reverse('review_detail', args=[bibliography_id, review_id]))
+        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
-    return HttpResponseRedirect(reverse('book/book_detail', args=[bibliography_id, review_id]))
+    return HttpResponseRedirect(reverse('book_detail', args=[bibliography_id]))
