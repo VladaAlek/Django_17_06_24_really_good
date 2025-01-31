@@ -189,7 +189,7 @@ def review_edit(request, bibliography_id, review_id):
             review.user = request.user
             review.bibliography = bibliography
             review.save()
-            messages.add_message(request, messages.SUCCESS, 'Review Updated!')
+            messages.add_message(request, messages.SUCCESS, 'Review Updated!', extra_tags='edit')
         else:
             messages.add_message(request, messages.ERROR, 'Error updating Review!')
 
@@ -209,7 +209,7 @@ def review_delete(request, bibliography_id, review_id):
 
     if review.user == request.user:
         review.delete()
-        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
+        messages.add_message(request, messages.SUCCESS, 'Comment deleted!', extra_tags='delete')
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 

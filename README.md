@@ -134,7 +134,7 @@ All required functions have been incorporated. They are functional and styled, w
 
 ## Deployment
 
-- [ElephantSQL](https://www.elephantsql.com/  "ElephantSQL") to store database
+- [ElephantSQL](https://www.elephantsql.com/  "ElephantSQL") to store database until 31.01.24. On that date, *Code Institute Postgres Database* have been used. 
 - [Cloudinary](https://cloudinary.com/  "Cloudinary") to store images added by users
 - [Heroky](https://dashboard.heroku.com/  "Heroku") to deploy the project
 - [Github](https://github.com/  "Github") for recording coding history. Unfortunately, the [wrong repo](static/images/milestone%20and%20projects%20open%20in%20the%20wrong%20repo.png) is used to create the first milestone and project. The link to this milestone, [here](https://github.com/users/VladaAlek/projects/24/views/1 "link to the repo")
@@ -142,6 +142,17 @@ All required functions have been incorporated. They are functional and styled, w
 
 - [Github Brunches](https://github.com/VladaAlek/Django_17_06_24_really_good/branches  "Github Brunches") - important, because it contains all Projects.
 
+## Messages
+To improve UI, the appropriate messages emerges on the screen following user's **CRUD OPERATIONS**. A small button makes it possible for user to delete pop-messages.
+
+- [summary saved successfully](./docs/images/summary%20saved%20successfully.png); 
+- [review submitted](./docs/images/review%20submitted.png); 
+- [review updated](./docs/images/review%20updated.png); 
+- [comment deleted](./docs/images/comment%20deleted.png); 
+- [delete comment question modal](./docs/images/delete%20comment%20question%20modal.png) is present to prevent the unwanted comment's deletions
+
+
+[CSS Index](static/images/CSS_index.png);
 
 ### Testing
 
