@@ -14,37 +14,47 @@ class ReviewList(generic.ListView):
     paginate_by = 6
 
 
+
 # Function-based views
 
-def about(request):
+def submit_summary(request):
+    '''
+    view to handle the POST action and 
+    to render it on the index page
+    '''
     if request.method == "POST":
         summary_form = BibliographyForm(request.POST)
         if summary_form.is_valid():
             new_summary = summary_form.save(commit=False)
             new_summary.reader = request.user
             new_summary.save()
-            messages.add_message(request, messages.SUCCESS, 'Summary saved successfully', extra_tags='about')
-            return redirect("about")
+            messages.add_message(request, messages.SUCCESS, 'Summary saved successfully', extra_tags='submit')
+            return redirect("submit_summary")
     else:
         summary_form = BibliographyForm()
     
-    # Filter messages to pass only one 'about' message
+    # Filter messages to pass only one 'submit' message
 
-    about_message = None
+    submit_message = None
 
     for message in messages.get_messages(request):
 
-        if 'about' in message.tags:
+        if 'submit' in message.tags:
 
-            about_message = message
+            submit_message = message
 
             break
 
-    return render(request, "book/about.html", {
+    return render(request, "book/index.html", {
         "summary_form": summary_form,
-        "about_message": about_message,     
+        "submit_message": submit_message,     
         }
         )
+
+def about(request):
+
+    return render(request, "book/about.html")
+
 
 
 def book_detail(request, bibliography_id):

@@ -15,8 +15,24 @@
     </div>
     {% endif %}
 
+    <!--
     <div>
         <a href="{% url 'about' %}" class="contribute-btn btn btn-outline-info btn-lg">Contribute</a>
+    </div>
+    -->
+    <div class="p-5 text-light">
+        <form method="post" action="{% url 'submit_summary' %}">
+
+            {% csrf_token %}
+
+            {{ summary_form.as_p }}
+
+            <div class="d-grid gap-2">
+
+                <button type="submit" class="btn btn-success btn-lg">Submit</button>
+
+            </div>
+        </form>
     </div>
 
     {% if is_paginated %}
