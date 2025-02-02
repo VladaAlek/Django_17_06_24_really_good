@@ -29,13 +29,12 @@ This essential project enables end-users to create, read, update, and delete ent
 
  **Home Page**
 
- - The landing area offers an overview of the six books: title, author, time of entry creation, contributors' identity, and a summary.
- 
+ The landing area is devided in two sections:
+ - **a.** [Form Section](./docs/images/form%20index%20page.png) makes it possible for the loged user to enter the new book entry.
+ To save space and improve UI, the form is [not visible after](./docs/images/form%20index%20page%202.png) the first page.
+ - **b.** Book Section - displays an overview of the four books, with the following data: title, author, time of entry creation, contributors' identity, and a book's summary.
 
-![Landing Page](./static/images/landing_area.png)
-
-
- - **About page**
+ **About page**
  is divided into three sections:
  
  - a: short textual explanation about the purpose of the project. This section contains the link to the *Home* page to make the navigation easier. 
