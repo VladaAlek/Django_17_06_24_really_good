@@ -64,7 +64,15 @@
             <p>created on: <strong>{{  bibliography.created_on }}</strong> <br> by:
                 <strong>{{ bibliography.reader }}</strong> </p>
             <p class="book-content">{{ bibliography.summary }}</p>
+            <div class="d-flex justify-content-center">
+                {% if bibliography.reader == request.user %}
+
+                <a href="{% url 'edit_bibliography' bibliography.id %}" class="btn btn-warning my-1">Edit</a>
+                <a href="{% url 'delete_bibliography' bibliography.id %}" class="btn btn-danger">Delete</a>
+                {% endif %}
+            </div>
         </div>
+
         {% endfor %}
     </div>
 </div>

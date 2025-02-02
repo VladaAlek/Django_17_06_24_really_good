@@ -11,7 +11,7 @@ from .forms import ReviewForm, BibliographyForm, DeleteForm
 class ReviewList(generic.ListView):
     queryset = Bibliography.objects.all()
     template_name = "book/index.html"
-    paginate_by = 4
+    paginate_by = 6
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -20,6 +20,8 @@ class ReviewList(generic.ListView):
 
 
 # function-based views
+
+# views to handle index page functionality
 
 
 def submit_summary(request):
@@ -57,11 +59,36 @@ def submit_summary(request):
         )
 
 
+def edit_bibliography(request, pk):
+    bibliography = get_object_or_404(Bibliography, pk=pk, reader=request.user)
+    if request.method == "POST":
+        form = BibliographyForm(request.POST, instance=bibliography)
+        if form.is_valid():
+            form.save()
+            return redirect("home")
+    else:
+        form = BibliographyForm(instance=bibliography)
+
+    return render(request, "book/edit_bibliography.html", {"form": form})
+
+
+def delete_bibliography(request, pk):
+    bibliography = get_object_or_404(Bibliography, pk=pk, reader=request.user)
+    if request.method == "POST":
+        bibliography.delete()
+        return redirect("home")
+    return render(request, "book/delete_bibliography.html", {"bibliography": bibliography})
+
+
+
+# view to handle about page functionality
+
 def about(request):
 
     return render(request, "book/about.html")
 
 
+# views to handle book details functionality
 
 def book_detail(request, bibliography_id):
     
