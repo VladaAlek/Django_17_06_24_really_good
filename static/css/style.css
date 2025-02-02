@@ -73,6 +73,8 @@ p {
     padding-left: 7px;
     padding-right: 7px;
     text-indent: 20px;
+    min-height: 450px;
+    margin-bottom: -15px;
 }
 
 .book-edit-btn,
