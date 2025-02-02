@@ -11,9 +11,10 @@ class ReviewForm(forms.ModelForm):
 class BibliographyForm(forms.ModelForm):
     class Meta:
         model = Bibliography
-        fields = ['title', 'author', 'publisher', 'year', 'edition', 'summary']
+        fields = ['title', 'slug', 'author', 'publisher', 'year', 'edition', 'summary']
         labels = {
             'title': 'Title',
+            'slug': "Slug",
             'author': 'Author(s)',
             'publisher': 'Publisher',
             'year': 'Year',
