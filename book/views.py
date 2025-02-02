@@ -6,16 +6,21 @@ from .models import Review, Bibliography
 from .forms import ReviewForm, BibliographyForm, DeleteForm
 
 
-# Class-based views
+# class-based view
 
 class ReviewList(generic.ListView):
     queryset = Bibliography.objects.all()
     template_name = "book/index.html"
     paginate_by = 6
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["summary_form"] = BibliographyForm()  # Add form to context
+        return context
 
 
-# Function-based views
+# function-based views
+
 
 def submit_summary(request):
     '''
@@ -29,7 +34,7 @@ def submit_summary(request):
             new_summary.reader = request.user
             new_summary.save()
             messages.add_message(request, messages.SUCCESS, 'Summary saved successfully', extra_tags='submit')
-            return redirect("submit_summary")
+            return redirect("home")
     else:
         summary_form = BibliographyForm()
     
