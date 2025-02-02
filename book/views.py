@@ -11,7 +11,7 @@ from .forms import ReviewForm, BibliographyForm, DeleteForm
 class ReviewList(generic.ListView):
     queryset = Bibliography.objects.all()
     template_name = "book/index.html"
-    paginate_by = 6
+    paginate_by = 4
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -55,6 +55,7 @@ def submit_summary(request):
         "submit_message": submit_message,     
         }
         )
+
 
 def about(request):
 
