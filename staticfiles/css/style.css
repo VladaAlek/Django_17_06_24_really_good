@@ -69,10 +69,29 @@ p {
     padding-right: 7px;
 }
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.col-sm-12 {
+    display: flex;
+    flex-direction: column;
+}
+
 .book-content {
     padding-left: 7px;
     padding-right: 7px;
     text-indent: 20px;
+    flex-grow: 1;
+}
+
+.book-edit-btn,
+.book-delete-btn {
+    width: 70px;
+    padding: 5px;
+    margin: 5px;
 }
 
 /* about.html styling */
