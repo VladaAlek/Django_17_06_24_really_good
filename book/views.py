@@ -73,7 +73,7 @@ def edit_bibliography(request, bibliography_id):
             bibliography = bibliography_form.save(commit=False)
             bibliography.reader = request.user
             bibliography.save()
-            messages.success(request, 'Bibliography Updated!', extra_tags='edit')
+            messages.success(request, 'Bibliography Updated!', extra_tags='edit_book')
             return redirect('home')
 
         messages.error(request, 'Error updating Bibliography!')
@@ -84,15 +84,24 @@ def edit_bibliography(request, bibliography_id):
     return render(request, "book/edit_bibliography.html", {"form": bibliography_form})
 
 
+def delete_bibliography(request, bibliography_id):
+    """
+    View to delete a bibliographical unit.
+    """
+    bibliography = get_object_or_404(Bibliography, pk=bibliography_id)
 
-def delete_bibliography(request, pk):
-    bibliography = get_object_or_404(Bibliography, pk=pk, reader=request.user)
     if request.method == "POST":
-        bibliography.delete()
-        messages.add_message(request, messages.SUCCESS, 'Bibliography deleted', extra_tags='delete_book')  
-        return redirect("home")
+        if bibliography.reader == request.user:
+            bibliography.delete()
+            messages.add_message(request, messages.INFO, 'Book deleted!',extra_tags='delete_book' )
+            return HttpResponseRedirect(reverse('home'))
+        else:
+            messages.error(request, 'You can only delete your own book contributions!')
+
+
     return render(request, "book/delete_bibliography.html", {"bibliography": bibliography})
-    
+
+
 
 # view to handle about page functionality
 

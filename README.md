@@ -38,7 +38,7 @@ This essential project enables end-users to create, read, update, and delete ent
  
  The logged-in user have the option to delete it's contribution. The custom [modal](./docs/images/Test%20delete%20book.png) prevents non-intentional deletion.
 
-Upon editing [edit1](./docs/images/edit%20bibliography%20message.png) [edit 2](./docs/images/edit%20bibliography%20message%201.png) [edit 3](./docs/images/edit%20bibliography%20message%202.png) or deleting bibliographical units, the appropriate messageses popup. 
+Upon editing [edit 1](./docs/images/edit%20bibliography%20message.png) [edit 2](./docs/images/edit%20bibliography%20message%201.png) [edit 3](./docs/images/edit%20bibliography%20message%202.png) or deleting [delete 1](./docs/images/delete%20book.png) [delete 2](./docs/images/delete%20book%201.png) [delete 3](./docs/images/delete%20book%202.png) bibliographical units, the appropriate messageses popup. 
  
  **About page**
  is divided into three sections:

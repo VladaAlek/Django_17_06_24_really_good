@@ -82,69 +82,23 @@
     </div>
   </nav>
 
-  <!-- displaying Django messages -->
+  <!-- Messages Container -->
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
-        <!-- Submit messages bibliography submitted -->
         {% for message in messages %}
-        {% if 'submit' in message.tags %}
-        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+        <div class="alert alert-dismissible fade show 
+    {% if 'submit' in message.tags %}alert-success
+    {% elif 'review' in message.tags %}alert-info
+    {% elif 'summary' in message.tags %}alert-warning
+    {% elif 'edit' in message.tags %}alert-primary
+    {% elif 'delete' in message.tags %}alert-danger
+    {% elif 'delete_book' in message.tags %}alert-danger
+    {% elif 'edit_book' in message.tags %}alert-info
+    {% else %}{{ message.tags }}{% endif %}" role="alert">
           {{ message | safe }}
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        {% endif %}
-        {% endfor %}
-
-        <!-- Review messages "edit_book"-->
-        {% for message in messages %}
-        {% if 'edit_book' in message.tags %}
-        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-          {{ message | safe }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        {% endif %}
-        {% endfor %}
-
-
-        <!-- Review messages "delete_book"-->
-        {% for message in messages %}
-        {% if 'delete_book' in message.tags %}
-        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-          {{ message | safe }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        {% endif %}
-        {% endfor %}
-
-        <!-- Review messages "comment updated"-->
-        {% for message in messages %}
-        {% if 'review' in message.tags %}
-        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-          {{ message | safe }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        {% endif %}
-        {% endfor %}
-
-        <!-- Review_Detail edit messages -->
-        {% for message in messages %}
-        {% if 'edit' in message.tags %}
-        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-          {{ message | safe }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        {% endif %}
-        {% endfor %}
-
-        <!-- Review_Detail delete messages -->
-        {% for message in messages %}
-        {% if 'delete' in message.tags %}
-        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-          {{ message | safe }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        {% endif %}
         {% endfor %}
       </div>
     </div>
