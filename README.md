@@ -32,12 +32,13 @@ This essential project enables end-users to create, read, update, and delete ent
  The landing area is devided in two sections:
  - **a.** [Form Section](./docs/images/form%20index%20page.png) makes it possible for the loged user to enter the new book entry.
  To save space and improve UI, the form is [not visible after](./docs/images/form%20index%20page%202.png) the first page.
- - **b.** Book Section - displays an overview of the six books, with the following data: title, author, time of entry creation, contributors' identity, and a book's summary.
+ - **b.** [Book Section](./docs/images/book%20section.png) displays an overview of the six books, with the following data: title, author, time of entry creation, contributors' identity, and a book's summary.
 
  The logged-in user have the option to edit it's contribution: [Edit 1](./docs/images/Test%20edit%20book.png); [Edit 2](./docs/images/Test%20edit%20book%201.png); [Edit 3](./docs/images/Test%20edit%20book%202.png).
  
  The logged-in user have the option to delete it's contribution. The custom [modal](./docs/images/Test%20delete%20book.png) prevents non-intentional deletion.
 
+Upon editing [edit1](./docs/images/edit%20bibliography%20message.png) [edit 2](./docs/images/edit%20bibliography%20message%201.png) [edit 3](./docs/images/edit%20bibliography%20message%202.png) or deleting bibliographical units, the appropriate messageses popup. 
  
  **About page**
  is divided into three sections:
