@@ -59,27 +59,40 @@ def submit_summary(request):
         )
 
 
-def edit_bibliography(request, pk):
-    bibliography = get_object_or_404(Bibliography, pk=pk, reader=request.user)
-    if request.method == "POST":
-        form = BibliographyForm(request.POST, instance=bibliography)
-        if form.is_valid():
-            form.save()
-            return redirect("home")
-    else:
-        form = BibliographyForm(instance=bibliography)
 
-    return render(request, "book/edit_bibliography.html", {"form": form})
+def edit_bibliography(request, bibliography_id):
+    """
+    View to edit bibliographical units.
+    """
+    bibliography = get_object_or_404(Bibliography, pk=bibliography_id)
+
+    if request.method == "POST":
+        bibliography_form = BibliographyForm(data=request.POST, instance=bibliography)
+
+        if bibliography_form.is_valid() and bibliography.reader == request.user:
+            bibliography = bibliography_form.save(commit=False)
+            bibliography.reader = request.user
+            bibliography.save()
+            messages.success(request, 'Bibliography Updated!', extra_tags='edit')
+            return redirect('home')
+
+        messages.error(request, 'Error updating Bibliography!')
+
+    else:
+        bibliography_form = BibliographyForm(instance=bibliography)
+
+    return render(request, "book/edit_bibliography.html", {"form": bibliography_form})
+
 
 
 def delete_bibliography(request, pk):
     bibliography = get_object_or_404(Bibliography, pk=pk, reader=request.user)
     if request.method == "POST":
         bibliography.delete()
+        messages.add_message(request, messages.SUCCESS, 'Bibliography deleted', extra_tags='delete_book')  
         return redirect("home")
     return render(request, "book/delete_bibliography.html", {"bibliography": bibliography})
-
-
+    
 
 # view to handle about page functionality
 
