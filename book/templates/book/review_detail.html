@@ -7,9 +7,9 @@
 <div class="container-fluid mt-4 custom-container">
     <!-- Display all bibliographies -->
     <div class="col-md-12">
-        <div class="d-flex flex-column flex-md-row align-items-md-center">
+        <div class="d-flex flex-column flex-md-row align-items-md-center p-3">
             <div>
-                <h1 class="post-title">{{ bibliography.title }}</h1>
+                <h1 class="post-title mb-3 text-center">{{ bibliography.title }}</h1>
                 <p class="post-subtitle">
                     Author: <strong>{{ bibliography.author }}</strong><br>
                     Year: <strong>{{ bibliography.year }}</strong><br>
@@ -19,7 +19,7 @@
                 </p>
             </div>
 
-            <div class="d-none d-md-block col-md-4 col-lg-3 ms-md-4">
+            <div class="d-none d-md-block col-md-4 col-lg-3 ms-md-4 mb-4">
                 {% if "placeholder" in bibliography.featured_image.url %}
                 <img class="card-img-top" src="{% static 'images/default_image.jpg' %}" class="scale"
                     alt="placeholder image">
@@ -28,15 +28,13 @@
                     alt="{{ bibliography.title }}">
                 {% endif %}
             </div>
-
         </div>
-        <hr>
     </div>
 </div>
 <!-- Display reviews related to this bibliography -->
-<div class="row">
+<div class="row p-4">
     <div class="col-12">
-        <h3>Book's Summary</h3>
+        <h3 class="p-4">Book's Summary</h3>
         <p class="card-text p-translucent">
             {{ bibliography.summary | safe }}
         </p>
@@ -44,7 +42,7 @@
 </div>
 
 <!-- Creating New Reviews -->
-<div class="row mt-4">
+<div class="row mt-4 p-4">
     <div class="col-md-12">
         <div class="card mb-4">
             <div class="card-body">
@@ -55,7 +53,7 @@
                     {% csrf_token %}
                     {{ review_form | crispy }}
                     <textarea id="id_body" name="content" class="form-control"></textarea>
-                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg mt-2">Submit</button>
                 </form>
                 {% else %}
                 <p>Log in to leave a review</p>
@@ -66,27 +64,24 @@
 </div>
 
 <!-- Displaying count of reviews -->
-<div class="row">
+<div class="row p-4">
     <div class="col-12">
         <strong class="text-secondary">
             <i class="far fa-comments"></i> {{ reviews_count }}
         </strong>
     </div>
-    <div class="col-12">
-        <hr>
-    </div>
 </div>
 
 <!-- Displaying Reviews -->
-<div class="row">
+<div class="row p-4">
     <div class="col-md-12">
         <div class="card mb-4">
             <div class="card-body">
                 <h3>Reviews:</h3>
                 {% for review in reviews %}
-                <div class="p-2 review {% if review.user == user %}font-weight-bold {% endif %}">
+                <div class="p-4 review {% if review.user == user %}font-weight-bold {% endif %}">
                     <p>
-                        {{ review.user }}
+                        <em>{{ review.user }}</em>
                         <span class="font-weight-normal">
                             {{ review.created_on }}
                         </span> wrote:
