@@ -109,6 +109,10 @@ label {
     font-weight: 600;
 }
 
+.indent {
+    text-indent: 20px;
+}
+
 
 /* review_detail styling*/
 

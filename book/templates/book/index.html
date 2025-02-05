@@ -15,12 +15,6 @@
         {% endif %}
     </div>
     {% endif %}
-
-    <!--
-    <div>
-        <a href="{% url 'about' %}" class="contribute-btn btn btn-outline-info btn-lg">Contribute</a>
-    </div>
-    -->
     {% if page_obj.number == 1 %}
     <div class="p-5 text-light">
         <form method="post" action="{% url 'submit_summary' %}">

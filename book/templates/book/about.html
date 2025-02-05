@@ -3,65 +3,56 @@
 {% load static %}
 
 {% block content %}
-<div class="container-lg my-5">
-  <h2 class="text-center about-title pt-3 pb-3 mb-3"><strong>Contribute to Our Project!</strong></h2>
-  <div class="row gy-3 equal-height-row">
-    <div class="equal-height-row col-sm-12 col-md-6 col-lg-4">
-      <p class="text-collumn p-3 text-dark py-3"><br>Humanity is facing new challenges in times of global warming,
-        landscape
-        degradation, increased social insecurity, massive and uncontrolled migrations, and unprecedented globalization,
-        to name some of the factors. Consequently, scientific knowledge about this phenomenon is rapidly increasing as
-        devoted
-        researchers in many scientific institutions try to understand the main ways to mitigate the short- and long-term
-        negative consequences of human and natural disasters. Even for the most experienced experts, navigating through
-        the "forest" of ever-increasing publications devoted to these topics is complex.<br><br>
-        We strongly believe your expertise is crucial in summarizing the knowledge about the latest scientific
-        breakthroughs in this field, which is why our institute developed this platform as a simple but effective
-        communication tool.<br><br>
-        We invite you to enter the fundamental data about a favourite book using a few-step procedure. We invite you to
-        enter the fundamental data about a favourite book using a few-step procedure. Furthermore, navite to <a
-          class="nav-link" href="{% url 'home' %}"><strong class="register-link">Home</strong></a> page to share your
-        thoughts by
-        simply clicking the words <strong>Comment Section</strong>. Let your
-        contribution be the starting point for a lively discussion on the topic that will affect our lives and our
-        future, whether we like it or not.</p>
+<div class="container text-center">
+  <div class="row">
+    <div>
+      <h2 class="text-center about-title pt-3 pb-3 mb-3"><strong>Learn more about us!</strong></h2>
     </div>
-    <div class="text-collumn equal-height-row col-sm-12 col-md-6 col-lg-4">
-      <div class="p-5 text-light">
-        <form method="post" action="{% url 'about' %}">
-
-          {% csrf_token %}
-
-          {{ summary_form.as_p }}
-
-          <div class="d-grid gap-2">
-
-            <button type="submit" class="btn btn-success btn-lg">Submit</button>
-
-            <div class="btn-group">
-
-              <a href="#" class="btn btn-info">Read</a>
-
-              <a href="#" class="btn btn-warning">Update</a>
-
-            </div>
-
-            <div class="btn-group">
-
-              <a href="#" class="btn btn-danger">Delete</a>
-
-              <a href="#" class="btn btn-dark">Comment</a>
-
-            </div>
-          </div>
-        </form>
+  </div>
+  <div class="row d-flex align-items-stretch row-gap-3">
+    <!-- First Column: Text -->
+    <div class="col-md-4 col-12 d-flex flex-column">
+      <p class="text-collumn p-3 text-dark py-3 m-0 flex-grow-1">
+        Humanity is facing new challenges in times of global warming, landscape degradation, increased social
+        insecurity, massive and uncontrolled migrations, and unprecedented globalization, to name some of the
+        factors. Scientific knowledge about this phenomenon is rapidly increasing as researchers try to
+        understand and mitigate the negative consequences. Governments, organizations, and communities worldwide
+        are struggling to develop sustainable solutions that balance economic growth with environmental and social
+        responsibility. <br> As climate change accelerates, extreme weather events are becoming
+        more frequent, threatening food security,
+        biodiversity, and human settlements. Researchers are working tirelessly to analyze data, propose policies,
+        and implement innovative technologies to reduce the harmful impact of these crises.</p>
+    </div>
+    <!-- Second Column: Image -->
+    <div class="col-md-4 col-12 d-flex flex-column">
+      <div class="flex-grow-1 d-flex align-items-center">
+        <img src="{% static 'images/forest_fire.jpg' %}" 
+             alt="image of the forest fire disaster" 
+             class="img-fluid mx-auto">
       </div>
     </div>
-    <div class="equal-height-row col-lg-4 p-0 bg-white d-none d-lg-block">
-      <img src="{% static 'images/forest_fire.jpg' %}" alt="image of the forest fire desaster" class="img-fluid">
+    <!-- Third Column: Text -->
+    <div class="col-md-4 col-12 d-flex flex-column">
+      <p class="text-collumn p-3 text-dark py-3 m-0 flex-grow-1">
+        However, collaboration
+        between scientists, policymakers, and the public is essential to drive meaningful change. By fostering
+        awareness and supporting evidence-based strategies, we can work toward a more sustainable and resilient future.
+        <br>
+        We strongly believe our expertise is crucial in summarizing knowledge about the latest scientific breakthroughs.
+        Our insights and analytical skills help distill complex research findings into accessible and valuable
+        information, ensuring that advancements in science are effectively communicated. By contributing our knowledge,
+        we play a vital role in bridging the gap between researchers, policymakers, and the public, fostering informed
+        discussions and promoting innovation that can address global challenges. <br> Our institute developed this
+        platform as a communication tool. Navigate to our home page <a class="d-inline" href="{% url 'home' %}"><strong class="register-link"><i
+          class="bi bi-house"></i></strong></a> to enter your beloved book or simply share your
+        thoughts in the <em>Comment Section</em> on the same page.
+        
+      </p>
+
     </div>
   </div>
 </div>
+
 {% endblock %}
 
 {% block copyright %}
