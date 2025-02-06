@@ -3,7 +3,7 @@
 
 ## Objective
 
-This essential project enables end-users to create, read, update, and delete entries for book titles on specific topics, thereby establishing a unique database. The "review" option is essential, allowing readers to engage in discussions and share their thoughts.
+This basic project enables end-users to create, read, update, and delete entries for book titles , thereby establishing a unique database on specific topics. The "review" option is important too, allowing readers to engage in discussions and share their thoughts on individual books.
 
 
 ![Landing Page](./static/images/responsive%20design.png)
@@ -12,12 +12,12 @@ This essential project enables end-users to create, read, update, and delete ent
 ## Users Benefits and Goals
 
 - Product Owner 
-    the website establishes a powerful tool for knowledge dissemination, networking activities, sharing and acquiring cutting-edge ideas on specific topics
+    the website establishes a powerful tool for knowledge dissemination, networking activities, sharing and acquiring cutting-edge ideas on specific topics.
 
 - Final Users can expect several benefits from using this digital product
     
 #### A) For the first-time user
- - dynamic digital platform to contribute to and navigate through the content of book entries 
+ - dynamic digital platform to contribute to and/or navigate through the content of book entries 
 
 #### For returning and frequent users
 
@@ -30,25 +30,48 @@ This essential project enables end-users to create, read, update, and delete ent
  **Home Page**
 
  The landing area is devided in two sections:
- - **a.** [Form Section](./docs/images/form%20index%20page.png) makes it possible for the loged user to enter the new book entry.
- To save space and improve UI, the form is [not visible after](./docs/images/form%20index%20page%202.png) the first page.
- - **b.** [Book Section](./docs/images/book%20section.png) displays an overview of the six books, with the following data: title, author, time of entry creation, contributors' identity, and a book's summary.
+ - **a.** [Form Section LG](./docs/images/form%20index%20page.png);  [Form Section MD](./docs/images/form%20index%20page%20md.png); [Form Section SM](./docs/images/form%20index%20page%20sm.png) makes it possible for the loged user to enter the new book entry.
 
- The logged-in user have the option to edit it's contribution: [Edit 1](./docs/images/Test%20edit%20book.png); [Edit 2](./docs/images/Test%20edit%20book%201.png); [Edit 3](./docs/images/Test%20edit%20book%202.png).
+
+
+ To save space and improve UI, the form is [not visible after](./docs/images/form%20index%20page%202.png) the first page.
+
+ - **b.** [Book Section LG](./docs/images/form%20index%20page%202%20lg.png); [Book Section MD](./docs/images/form%20index%20page%202%20md.png); [Book Section SM](./docs/images/form%20index%20page%202%20sm.png) displays an overview of the six books per single page, with the following data: title, author, time of entry creation, contributors' identity, and a book's summary.
+
+ The loged-in user have visible [edit and delete buttons](./docs/images/form%20index%20page%202%20edit%20and%20delete.png), whose function is explaned bellow: 
  
+ The logged-in user have the option to edit it's contribution: [Edit 1](./docs/images/Test%20edit%20book.png); [Edit 2](./docs/images/Test%20edit%20book%201.png); [Edit 3](./docs/images/Test%20edit%20book%202.png).
+
  The logged-in user have the option to delete it's contribution. The custom [modal](./docs/images/Test%20delete%20book.png) prevents non-intentional deletion.
 
-Upon editing [edit 1](./docs/images/edit%20bibliography%20message.png) [edit 2](./docs/images/edit%20bibliography%20message%201.png) [edit 3](./docs/images/edit%20bibliography%20message%202.png) or deleting [delete 1](./docs/images/delete%20book.png) [delete 2](./docs/images/delete%20book%201.png) [delete 3](./docs/images/delete%20book%202.png) bibliographical units, the appropriate messageses popup. 
+Upon editing [edit 1](./docs/images/edit%20bibliography%20message.png) [edit 2 with message](./docs/images/edit%20bibliography%20message%201.png) [edit 3](./docs/images/edit%20bibliography%20message%202.png) or deleting [delete 1](./docs/images/delete%20book.png) [delete 2](./docs/images/delete%20book%201.png) [delete 3 with message](./docs/images/delete%20book%202.png) bibliographical units, the appropriate messageses popup. 
  
+ 
+  **Book Details and Book Review Page**
+
+  This page is reachable by clicking words [Comment Here and Chat Icon](./docs/images/comment%20here.png) of each single book.
+ 
+  This page is devided in two sections:
+ - **a.** Book Description, containig Title, Author(s), Publishing Year, Publisher, "Created by" and "Created on", as well es Book's Summary fields. Only [LG](./docs/images/individual%20book%20description%20LG.png) format contains the immage of the book, while this feature is missing in the [MD](./docs/images/individual%20book%20description%20MD.png) and [SM](./docs/images/individual%20book%20description%20SM.png) formats to make the content navigation easier to the users.
+
+- **b.** Making, editing or deleting own reviews is allowed only to [logged in](./docs/images/no%20make%20edit%20delete%20review.png) users. However, the logged in user can [leave, or edit/delete](./docs/images/make%20edit%20delete%20review.png) it's own review.
+
+Editing process requires two steps: [Change the text of the original review and clicking](./docs/images/edit%20review.png) button, which results in [Updated Review Content](./docs/images/edit%20review%201.png) .
+
+[edited review message](./docs/images/review%20edited.png)
+
+[deleted review message](./docs/images/deleted%20review.png)
+
+**additional feature** The review'number [counter](./docs/images/review%20count.png) indicates the number of reviews.
+
  **About page**
  is divided into three sections:
  
- - a: short textual explanation about the purpose of the project. This section contains the link to the *Home* page to make the navigation easier. 
- - b: The form section allows users to enter and submit bibliographical units in the database. Further development: The "Read" and"Update" buttons will be deleted. The "Delete" button will become functional. *Superuser* and the *author of the entry* will be able to delete db-elements, which should cause the deletion of all reviews related to this specific entry. The "Comment" button will be renamed the "Review" button, becoming a direct link to the review section.  
- - c: Capture featuring a forest fire—Further development: The Contact form, similar to one presented in "I Think Therefore I Blog," will be introduced instead of the existing capture to enhance cooperation with the product owner and allow minor corrections of book entries. More attention will be paid to the style of this page. 
+ - a: two short textual explanation about the purpose of the project. This section contains the link to the *Home* page to make the navigation easier. 
+  
+ - b: Capture featuring a forest fire—Further development.
+[About LG](./docs/images/about_page.png); [About MD](./docs/images/about_page%20MD.png); [About SM](./docs/images/about_page%20SM.png); 
 
-
-![About Page](./static/images/about_page.png)
 
 ### Additional Features
 
@@ -56,9 +79,13 @@ Upon editing [edit 1](./docs/images/edit%20bibliography%20message.png) [edit 2](
  - *Home page* 1: by clicking on DRU Bibliography in navbar 2: Home link in navbar 3: 
  - *List of book navigation* - Next and Prev button introduced [Next Only](static/images/next_only.png); [Prev Next](static/images/prev_next.png); 
 [Prev Only](static/images/prev_only.png);
-- *Contribute* 1: by clicking on the Contribute button on the *Home page* (in the further stages of development, the Contribute link will be added to the navbar)
-- *Comment section* by clicking on the words *Comment Section* on *Home page*
-- *About page* 1: About link in navbar 2: Contribute button in *Home page*
+- *Individual Book View* by clicking on the words *Comment Here with Chat Icon* on the *Home page*
+- *About page* 1: About link in navbar
+
+
+#### Footer
+
+Links to the social platforms in the [footer](./docs/images/footer.png) are not active.
 
 #### Authentification
 
