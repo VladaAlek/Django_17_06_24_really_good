@@ -3,18 +3,17 @@
 
 ## Objective
 
-This basic project enables end-users to create, read, update, and delete entries for book titles , thereby establishing a unique database on specific topics. The "review" option is important too, allowing readers to engage in discussions and share their thoughts on individual books.
+This essential project enables end-users to create, read, update, and delete entries for book titles, thereby establishing a unique database on specific topics. The "review" option is important, too, allowing readers to engage in discussions and share their thoughts on individual books.
 
 
 ![Landing Page](./static/images/responsive%20design.png)
 
 
-## Users Benefits and Goals
+## Users' Benefits and Goals
 
-- Product Owner 
-    the website establishes a powerful tool for knowledge dissemination, networking activities, sharing and acquiring cutting-edge ideas on specific topics.
+- Product Owner: The website establishes a powerful tool for knowledge dissemination, networking activities, sharing and acquiring cutting-edge ideas on specific topics.
 
-- Final Users can expect several benefits from using this digital product
+- Final Users can expect several benefits from using this digital product,
     
 #### A) For the first-time user
  - dynamic digital platform to contribute to and/or navigate through the content of book entries 
@@ -29,18 +28,18 @@ This basic project enables end-users to create, read, update, and delete entries
 
  **Home Page**
 
- The landing area is devided in two sections:
+ The landing area is divided into two sections:
  - **a.** [Form Section LG](./docs/images/form%20index%20page.png);  [Form Section MD](./docs/images/form%20index%20page%20md.png); [Form Section SM](./docs/images/form%20index%20page%20sm.png) makes it possible for the loged user to enter the new book entry.
 
 
 
- To save space and improve UI, the form is [not visible after](./docs/images/form%20index%20page%202.png) the first page.
+ In order to save space and improve UI, the form is [not visible after](./docs/images/form%20index%20page%202.png) the first page.
 
  - **b.** [Book Section LG](./docs/images/form%20index%20page%202%20lg.png); [Book Section MD](./docs/images/form%20index%20page%202%20md.png); [Book Section SM](./docs/images/form%20index%20page%202%20sm.png) displays an overview of the six books per single page, with the following data: title, author, time of entry creation, contributors' identity, and a book's summary.
 
- The loged-in user have visible [edit and delete buttons](./docs/images/form%20index%20page%202%20edit%20and%20delete.png), whose function is explaned bellow: 
+ The logged-in user has visible [edit and delete buttons](./docs/images/form%20index%20page%202%20edit%20and%20delete.png), whose function is explained bellow: 
  
- The logged-in user have the option to edit it's contribution: [Edit 1](./docs/images/Test%20edit%20book.png); [Edit 2](./docs/images/Test%20edit%20book%201.png); [Edit 3](./docs/images/Test%20edit%20book%202.png).
+ The logged-in user has the option to edit his contribution: [Edit 1](./docs/images/Test%20edit%20book.png); [Edit 2](./docs/images/Test%20edit%20book%201.png); [Edit 3](./docs/images/Test%20edit%20book%202.png).
 
  The logged-in user have the option to delete it's contribution. The custom [modal](./docs/images/Test%20delete%20book.png) prevents non-intentional deletion.
 
@@ -49,25 +48,27 @@ Upon editing [edit 1](./docs/images/edit%20bibliography%20message.png) [edit 2 w
  
   **Book Details and Book Review Page**
 
-  This page is reachable by clicking words [Comment Here and Chat Icon](./docs/images/comment%20here.png) of each single book.
+  This page is reachable by clicking the words [Comment Here and Chat Icon](./docs/images/comment%20here.png) of each single book.
  
-  This page is devided in two sections:
- - **a.** Book Description, containig Title, Author(s), Publishing Year, Publisher, "Created by" and "Created on", as well es Book's Summary fields. Only [LG](./docs/images/individual%20book%20description%20LG.png) format contains the immage of the book, while this feature is missing in the [MD](./docs/images/individual%20book%20description%20MD.png) and [SM](./docs/images/individual%20book%20description%20SM.png) formats to make the content navigation easier to the users.
+  This page is divided into two sections:
+ - **a.** Book Description, containing Title, Author(s), Publishing Year, Publisher, "Created by" and "Created on" fields, as well as the Book's Summary fields. Only the [LG](./docs/images/individual%20book%20description%20LG.png) format contains the book image, while this feature is missing in the [MD](./docs/images/individual%20book%20description%20MD.png) and [SM](./docs/images/individual%20book%20description%20SM.png) formats to make content navigation easier for users.
 
-- **b.** Making, editing or deleting own reviews is allowed only to [logged in](./docs/images/no%20make%20edit%20delete%20review.png) users. However, the logged in user can [leave, or edit/delete](./docs/images/make%20edit%20delete%20review.png) it's own review.
+ **Displaying Static and User-Generated Images:** If [custom capture](./docs/images/custom%20book's%20image.png) not uploaded, the [generic image](./docs/images/general%20book's%20image.png) showing project's logo is displyed. For now, it is possible to upload custom images only through the [Admin Panel](./docs/images/admin.png).
 
-Editing process requires two steps: [Change the text of the original review and clicking](./docs/images/edit%20review.png) button, which results in [Updated Review Content](./docs/images/edit%20review%201.png) .
+- **b.** Making, editing or deleting own reviews is allowed only for [logged in](./docs/images/no%20make%20edit%20delete%20review.png) users. However, the logged-in user can [leave, or edit/delete](./docs/images/make%20edit%20delete%20review.png) it's own review.
+
+The editing process requires two steps: [Change the text of the original review and clicking](./docs/images/edit%20review.png) the button, which results in [Updated Review Content](./docs/images/edit%20review%201.png).
 
 [edited review message](./docs/images/review%20edited.png)
 
 [deleted review message](./docs/images/deleted%20review.png)
 
-**additional feature** The review'number [counter](./docs/images/review%20count.png) indicates the number of reviews.
+**Additional feature** The review's number [counter](./docs/images/review%20count.png) indicates the number of reviews.
 
  **About page**
  is divided into three sections:
  
- - a: two short textual explanation about the purpose of the project. This section contains the link to the *Home* page to make the navigation easier. 
+ - a: two short textual explanations about the purpose of the project. This section contains the link to the *Home* page to make the navigation easier. 
   
  - b: Capture featuring a forest fire—Further development.
 [About LG](./docs/images/about_page.png); [About MD](./docs/images/about_page%20MD.png); [About SM](./docs/images/about_page%20SM.png); 
@@ -79,7 +80,7 @@ Editing process requires two steps: [Change the text of the original review and 
  - *Home page* 1: by clicking on DRU Bibliography in navbar 2: Home link in navbar 3: 
  - *List of book navigation* - Next and Prev button introduced [Next Only](static/images/next_only.png); [Prev Next](static/images/prev_next.png); 
 [Prev Only](static/images/prev_only.png);
-- *Individual Book View* by clicking on the words *Comment Here with Chat Icon* on the *Home page*
+- *Individual Book View* by clicking on the words: *Comment Here with Chat Icon* on the *Home page*
 - *About page* 1: About link in navbar
 
 
@@ -90,12 +91,8 @@ Links to the social platforms in the [footer](./docs/images/footer.png) are not 
 #### Authentification
 
 All required functions have been incorporated. They are functional and styled, when possible, to improve the UX: 
-[Register_Log In](static/images/register_login.png); [Log In](static/images/log_in.png); [Loged In](static/images/loged_in.png); [Sign Up](static/images/sign_up.png); 
+[Register_Log In](static/images/register_login.png); [Log In](static/images/log_in.png); [Logged In](static/images/loged_in.png); [Sign Up](static/images/sign_up.png); 
 [Sign Out](static/images/sign_out.png); [No_Log_No_Review](static/images/unloged_no_comments.png);
-
-#### Displaying Static and User-Generated Images
-
-- please check the detail view  *"At Risk: Natural Hazards, People's Vulnerability and Disasters"* on the *Home page*: [User-Generated Images](static/images/featured_image.png);
 
 
 ## Design and Development
