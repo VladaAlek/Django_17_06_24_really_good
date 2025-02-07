@@ -9,11 +9,10 @@ const deleteConfirm = document.getElementById("deleteConfirm");
 
 /**
 * Initializes edit functionality for the provided edit buttons.
-* 
-* For each button in the `editButtons` collection:
+* - For each button in the `editButtons` collection:
 * - Retrieves the associated review's ID upon click.
 * - Fetches the content of the corresponding review.
-* - Populates the `commentText` input/textarea with 
+* - Populates the `commentText` input/textarea with
   - the review's content for editing.
 * - Updates the submit button's text to "Update".
 * - Sets the form's action attribute to the `edit_review/{reviewId}` endpoint.
@@ -31,13 +30,12 @@ for (let button of editButtons) {
 
 /**
 * Initializes deletion functionality for the provided delete buttons.
-* 
-* For each button in the `deleteButtons` collection:
+* -For each button in the `deleteButtons` collection:
 * - Retrieves the associated reviews's ID upon click.
-* - Updates the `deleteConfirm` link's href to point to the 
-* deletion endpoint for the specific comment.
-* - Displays a confirmation modal (`deleteModal`) to prompt 
-* the user for confirmation before deletion.
+* - Updates the `deleteConfirm` link's href to point to the
+* - deletion endpoint for the specific comment.
+* - Displays a confirmation modal (`deleteModal`) to prompt
+* - the user for confirmation before deletion.
 */
 for (let button of deleteButtons) {
     button.addEventListener("click", (e) => {

@@ -40,7 +40,7 @@ This essential project enables end-users to create, read, update, and delete ent
  - initial stage [ERD Bibliography](./static/images/ERD_Book.png)
  - final stage [ERD Bibliography](static/images/ERD_Bibliography_2.png)
 
-The better usage of this model acchieved by introducing slug field in the forms.py.
+The better usage of this model was achieved by introducing a slug field in the forms.py.
 
 #### Review Model
 
@@ -175,13 +175,27 @@ To improve UI, the appropriate messages emerges on the screen following user's *
 - [book submitted testing success](static/images/book%20submited%20testing.png);
 
 #### Validation
-*Manual*
-- CSS
-[CSS Index](static/images/CSS_index.png); [CSS About](static/images/CSS_about.png); [CSS Single View](static/images/CSS%20single%20view.png);
-- HTML
-[Index](static/images/validation%20index%20.png); [About](static/images/validation%20about.png); [Single View](static/images/validation%20single%20view.png); [Registration](static/images/validation%20register.png); [Create Review](static/images/validation%20review%20creation.png);
-- JavaScript JSLint doesn't support all ESJ feat; hence minor error reports [Jslint](static/images/jslint.png). When possible, the raised issues addressed - too long text in the comments;
-- Python [Pythonium](https://pythonium.net/linter)
+**HTML:**
+
+- **index:** [Index No Errors](docs/images/index%20no%20errors.png);  [Index Overview](docs/images/index%20overview.png);  
+
+- **review_details:** [Single View](docs/images/detail%20whole%20view.png).
+In this document, the issues that are not connected to the specificity of the Django syntax addressed: [Stray end tag](./docs/images/Stray%20end%20tag.png); [Duplicate attribute](./docs/images/detail%20Duplicate%20Attribute.png); 
+
+- **about:**  [About No Errors](docs/images/about%20no%20errors.png);  [About Overview](docs/images/about%20overview.png);
+
+- **edit_bibliography:** [Edit Overview](docs/images/edit%20overview.png);
+
+- **delete_bibliography:** [Delete Overview](docs/images/delete%20overview.png);
+
+ **CSS:** 
+ - [W3C](docs/images/css%20validation.png);
+
+**JavaScript:**  
+- [JSLint](docs/images/js%20validation%201.png) doesn't support all ESJ features, hence minor error reports. When possible, the raised issues addressed, for instance, the [too long](docs/images/js%20validation%202.png) text in the comments. For the validation, the [Esprima](https://esprima.org/demo/validate.htm "Esprima JS Validation Platform") software was used, too.
+ 
+**Python** 
+- the file "book/views.py" was checked in [Pythonium](https://pythonium.net/linter) validator, which gave this [report](docs/images/python%20validation.png).
 
 
 #### Accessibility
@@ -194,10 +208,9 @@ To improve UI, the appropriate messages emerges on the screen following user's *
 
  - **Favicon** *not visible* in Firefox: [06/Aug/2024 08:31:59] "GET /4/ HTTP/1.1" 500 352382
 Not Found: /favicon.ico. *Visible* in Edge and Chrome.
- - deleted bibliographic unit still visible in the list [Not Deleted](static/images/Disaster_Reseach.png);
  
 ### Further improvement
- - use slugs (book's keywords) instead of the object's id to improve the site's ranking in search engines.
+ - there is a possibility to use slugs (book's keywords) instead of the object's id to improve the site's ranking in search engines.
 
 ## Captures and logos
 
