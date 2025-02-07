@@ -26,12 +26,6 @@ class BibliographyForm(forms.ModelForm):
         }
 
 
-
-class ReviewForm(forms.ModelForm):
-    class Meta:
-        model = Review
-        fields = ('content',)
-
 class DeleteForm(forms.ModelForm):
     class Meta:
         model = Review

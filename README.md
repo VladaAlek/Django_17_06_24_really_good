@@ -171,8 +171,19 @@ To improve UI, the appropriate messages emerges on the screen following user's *
 
 ### Testing
 
+**manual testing** - All features of the project have been intensely tested during the development stage. All test actions are documented, here are some examples of the 
+manual testing process: 
 - [review submitted testing](static/images/review%20submited%20testing.png); [review submitted testing success](static/images/review%20submited%20testing%201.png); explanation: extra code added to target the precise success message. The captures show the initial and end stages of development.
 - [book submitted testing success](static/images/book%20submited%20testing.png);
+
+**automated testing**
+
+**test_forms.py** [Test Results](./docs/images/test_forms.py.png) 
+
+- *test_form_is_not_valid*:  With this test, we falsely assume that the form might be valid, but we actually know it is not (since the content is empty). The test passes successfully if is_valid() returns False, confirming that the form validation works correctly.
+- *test_form_is_valid*: This test checks if the form is valid when all required fields are provided. It passes if is_valid() returns True, confirming that the form accepts correct input.
+
+
 
 #### Validation
 **HTML:**
