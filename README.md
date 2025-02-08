@@ -183,7 +183,8 @@ manual testing process:
 - *test_form_is_not_valid*:  With this test, we falsely assume that the form might be valid, but we actually know it is not (since the content is empty). The test passes successfully if is_valid() returns False, confirming that the form validation works correctly.
 - *test_form_is_valid*: This test checks if the form is valid when all required fields are provided. It passes if is_valid() returns True, confirming that the form accepts correct input.
 
-
+**test_view.py** [Test Results](./docs/images/test_view%20results.png) 
+- The test verifies that the book detail page loads properly, displays the correct content, and includes a review form.
 
 #### Validation
 **HTML:**

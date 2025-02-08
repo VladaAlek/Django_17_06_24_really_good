@@ -172,6 +172,7 @@ def book_detail(request, bibliography_id):
         "reviews": reviews,
         "reviews_count": reviews_count,
         "review_message": review_message,
+        "review_form": review_form,
         }
         
     )
