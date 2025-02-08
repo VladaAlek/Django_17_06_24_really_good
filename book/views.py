@@ -21,8 +21,6 @@ class ReviewList(generic.ListView):
 
 # function-based views
 
-# views to handle index page functionality
-
 
 def submit_summary(request):
     '''
@@ -103,18 +101,18 @@ def delete_bibliography(request, bibliography_id):
 
 
 
-# view to handle about page functionality
-
 def about(request):
-
+    """
+    #view to handle about page functionality
+    """
     return render(request, "book/about.html")
 
 
-# views to handle book details functionality
 
 def book_detail(request, bibliography_id):
     
     '''
+    views to handle book details functionality
     Display an individual :model:`book.Bibliography`.
 
     **Context**
@@ -182,7 +180,6 @@ def book_detail(request, bibliography_id):
 def create_summary(request):
     
     """
-
     **Context**
 
     ``summary`` 
@@ -194,9 +191,8 @@ def create_summary(request):
     **Template:**
 
     :template:`book/index.html`
-
     
-      """
+    """
 
     if request.method == "POST":
         summary_form = SummaryForm(data=request.Post)
@@ -212,7 +208,6 @@ def create_summary(request):
     
  
    #Filter messages to pass only one 'review' message
-
     
     summary_message = None
 
@@ -267,16 +262,13 @@ def review_delete(request, bibliography_id, review_id):
     """
     view to delete review
     """
-    
     queryset = Bibliography.objects.all()
     bibliography = get_object_or_404(queryset, pk=bibliography_id)
     review = get_object_or_404(Review, pk=review_id)
     
-
     if review.user == request.user:
         review.delete()
         messages.add_message(request, messages.SUCCESS, 'Comment deleted!', extra_tags='delete')
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
-
     return HttpResponseRedirect(reverse('book_detail', args=[bibliography_id]))

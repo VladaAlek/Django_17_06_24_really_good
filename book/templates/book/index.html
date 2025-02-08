@@ -63,8 +63,10 @@
             <div class="d-flex justify-content-center">
                 {% if bibliography.reader == request.user %}
 
-                <a href="{% url 'edit_bibliography' bibliography.id %}" class="btn btn-success my-1 book-edit-btn">Edit</a>
-                <a href="{% url 'delete_bibliography' bibliography.id %}" class="btn btn-danger book-delete-btn">Delete</a>
+                <a href="{% url 'edit_bibliography' bibliography.id %}"
+                    class="btn btn-success my-1 book-edit-btn">Edit</a>
+                <a href="{% url 'delete_bibliography' bibliography.id %}"
+                    class="btn btn-danger book-delete-btn">Delete</a>
                 {% endif %}
             </div>
         </div>
