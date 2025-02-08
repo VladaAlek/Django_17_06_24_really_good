@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Review, Bibliography
 from .forms import ReviewForm, BibliographyForm, DeleteForm
+from django.contrib.auth.decorators import login_required
 
 
 # class-based view
@@ -21,7 +22,7 @@ class ReviewList(generic.ListView):
 
 # function-based views
 
-
+@login_required
 def submit_summary(request):
     '''
     view to handle the POST action and 
