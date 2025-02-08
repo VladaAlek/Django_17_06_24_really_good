@@ -52,7 +52,6 @@
                 <form id="commentForm" method="post" style="margin-top: 1.3em;">
                     {% csrf_token %}
                     {{ review_form | crispy }}
-                    <textarea id="id_body" name="content" class="form-control"></textarea>
                     <button id="submitButton" type="submit" class="btn btn-signup btn-lg mt-2">Submit</button>
                 </form>
                 {% else %}
