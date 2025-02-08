@@ -5,7 +5,10 @@ from django import forms
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields =('content',)
+        fields = ('content',)
+        widgets = {
+            'content': forms.Textarea(attrs={'id': 'id_body'}), 
+        }
 
 
 class BibliographyForm(forms.ModelForm):
@@ -30,3 +33,4 @@ class DeleteForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ('content',)
+
