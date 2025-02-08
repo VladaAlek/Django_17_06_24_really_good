@@ -4,7 +4,7 @@ from django.test import TestCase
 from .models import Bibliography, Review
 from .forms import ReviewForm
 
-class TestReviewViews(TestCase):
+class TestPostReviewViews(TestCase):
 
     # setup user
     def setUp(self):
@@ -32,13 +32,15 @@ class TestReviewViews(TestCase):
             slug="test-review"
         )
 
-    def test_render_review_detail_page_with_comment_form(self):
-        response = self.client.get(reverse('book_detail', args=[self.bibliography.id]))
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Test Book")
-        self.assertContains(response, "This is a test review")
-        self.assertIsInstance(response.context["review_form"], ReviewForm)
+    def test_successful_review_submission(self):
 
+            """Test for posting a review on a book"""
 
+            self.client.login(username="myUsername", password="myPassword")
 
-        
+            review_data = {
+            'content': 'This is a test comment.'
+                }
+            response = self.client.post(reverse('book_detail', 
+            args=[self.bibliography.id]), review_data)
+            self.assertEqual(response.status_code, 302)

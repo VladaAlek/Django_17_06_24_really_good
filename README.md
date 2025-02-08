@@ -186,6 +186,9 @@ manual testing process:
 **test_view.py** [Test Results](./docs/images/test_view%20results.png) 
 - The test verifies that the book detail page loads properly, displays the correct content, and includes a review form.
 
+**test_post_book_view.py** [Test Results Failed](./docs/images/302%20assertion%20error.png); [Test Results Success](./docs/images/302%20assertion%20error%201.png);
+- the test failed becaues it expects a 200 OK response, but since the view redirects (return redirect('book_detail', bibliography_id=bibliography_id)), it returns 302 Redirect instead. The refactored test asserts new condition, resulting in the successful test.
+
 #### Validation
 **HTML:**
 
