@@ -83,6 +83,7 @@ def edit_bibliography(request, bibliography_id):
     return render(request, "book/edit_bibliography.html", {"form": bibliography_form})
 
 
+
 def delete_bibliography(request, bibliography_id):
     """
     View to delete a bibliographical unit.
